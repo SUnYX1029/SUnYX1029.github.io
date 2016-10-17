@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="SUn的技术博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="SUn">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Mac搭建Hexo博客"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="SUn的技术博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Hexo"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Mac搭建Hexo博客 - Hexo</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="Hexo" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Mac搭建Hexo博客
+            
+          </h1>
+          <p class="posted-on">
+          2015-10-17
+          </p>
+          <div class="tags-links">
+            
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>技术大牛都有自己的博客,而且感觉非常漂亮.比QQ空间之类的好看多了.正好最近也想自己搭建个博客,记录下自己的学习经历吧,给自己留点回忆,同时整理下自己的思路.最重要的是大家看到这篇博文之后也可以搭建属于自己的博客了,所以,说干就干!</p>
+<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>1.基于Hexo和gethub pages搭建静态博客<br>2.主题分享</p>
+<h1 id="基础准备"><a href="#基础准备" class="headerlink" title="基础准备"></a>基础准备</h1><h2 id="正式搭建博客-要想使用Hexo和github-pages搭建博客-需要以下环境"><a href="#正式搭建博客-要想使用Hexo和github-pages搭建博客-需要以下环境" class="headerlink" title="正式搭建博客!要想使用Hexo和github pages搭建博客,需要以下环境"></a>正式搭建博客!要想使用Hexo和github pages搭建博客,需要以下环境</h2><p>1.Github账号一枚 ,并创建一个指定名字的repo<br>2.Homebrew套件管理器,主要用来安装git和node.js<br>3.Git版本管理工具<br>4.node.js<br>5.配置SSH Key(可忽略)<br>6.安装Hexo<br>7.同步Hexo博客到github<br>这些东西都不熟悉没关系，下面都会详细介绍。</p>
+<h2 id="注册Github账号并创建repo"><a href="#注册Github账号并创建repo" class="headerlink" title="注册Github账号并创建repo"></a>注册Github账号并创建repo</h2><p>因为博客是基于github pages的,也就是你的博客内容是托管在gethub pages 所以我们需要有一个github账号,并且创建一个publicrepo来存放你的博客 如果你还没有github账号,去<a href="https://github.com/join?source=header-home" target="_blank" rel="external">这里</a>申请一个就好了,申请步骤很简单记住创建public库 private是要收费的,我们用github主要就是拥抱开源.</p>
+<p>申请完账号,登陆之后 就可以创建repo了 点击<code>New repository</code>:<img src="/2016/10/17/Mac搭建Hexo博客2/1.png" alt="1"><br>会跳转到这个界面:<br><img src="/2016/10/17/Mac搭建Hexo博客2/2.png" alt="2"> 需要注意的地方我已经做了标注,最需要注意的就是你创建的库的名字,必须是<code>username.github.io</code>等创建库的时候,把<code>username</code>换成你的用户名就可以了,点击<code>creat repository</code>就可以把仓库创建出来.</p>
+<p>要想进一步深入了解github,可以阅读这些资料:</p>
+<p><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md" target="_blank" rel="external">Github秘籍</a></p>
+<p><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GoGithub</a></p>
+<p><a href="http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/" target="_blank" rel="external">stormzhang 从0开始学习github系列</a></p>
+<h2 id="安装Homebrew套件管理器"><a href="#安装Homebrew套件管理器" class="headerlink" title="安装Homebrew套件管理器"></a>安装Homebrew套件管理器</h2><p>我们安装Homebrew的目的是方便安装git和node.js 但是Homebrew需要你的mac安装Xcode,其实很多mac应用也需要Xcode,所以建议安装一下,appstore里就有.装完Xcode之后,剩下的步骤就特别简单了,打开mac terminal终端,输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
+<p>就可以自动完成该工具的安装,如果这条命令失效了,可能是Homebrew更新了安装方式可以去<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">这里</a>查看最新安装命令以及Homebrew的简要介绍.Homebrew安装完成之后,安装get和node.js简直简单的不要不要的.</p>
+<p>Homebrew一些常用命令可以阅读以下资料:</p>
+<p><a href="http://www.qetee.com/exp/other/homebrew/" target="_blank" rel="external">Homebrew常用命令</a></p>
+<h3 id="安装Git版本管理工具"><a href="#安装Git版本管理工具" class="headerlink" title="安装Git版本管理工具"></a>安装Git版本管理工具</h3><p>Git是一个强大的版本管理工具，Github的版本管理就是基于Git的，现在svn基本过时了，使用Git进行版本管理才是王道。安装完Homebrew之后，安装Git几乎零成本，还是在terminal终端，输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install git</div></pre></td></tr></table></figure></p>
+<p>然后等一段时间就OK了,Homebrew会自动帮你完成下载安装.</p>
+<p>Git使用教程,可以参考以下资料:</p>
+<p><a href="http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/" target="_blank" rel="external">stormzhang Git快速应用系列</a></p>
+<p><a href="http://git.oschina.net/progit/" target="_blank" rel="external">Pro Git中文版</a></p>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Hexo是基于node.js的,所以要让Hexo运行,node.js环境是必不可少的,使用Homebrew安装node.js也特别简单,在treminal终端输入如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure></p>
+<p>然后等着Homebrew帮你完成下载安装就可以了,舒爽到爆炸!安装完node.js就可以使用常见的npm命令了 </p>
+<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>这一步可以忽略，配置SSH key与否，并不影响博客的搭建和使用，只是配置了之后，更新博客方便一点，不用每次都输用户名和密码.</p>
+<h3 id="检查本机上是否存在SSH-key"><a href="#检查本机上是否存在SSH-key" class="headerlink" title="检查本机上是否存在SSH key"></a>检查本机上是否存在SSH key</h3><p>打开终端,输入如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd .ssh</div><div class="line">ls -la</div></pre></td></tr></table></figure></p>
+<p>检查终端输出的文件列表中是否已经存在id_rsa.pub 或 id_dsa.pub 文件，如果文件已经存在，那么你可以跳过步骤2，直接进入步骤3.</p>
+<h3 id="创建一个SSH-Key"><a href="#创建一个SSH-Key" class="headerlink" title="创建一个SSH Key"></a>创建一个SSH Key</h3><p>在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure></p>
+<p>回车,接着会提示你让你输入文件名,直接回车会创建使用默认文件名的文件（推荐使用默认文件名);然后会提示你输入两次密码（输入密码之后没有反馈,显示还是空白,但是你确实已经输入了）,当然密码也可以不输,直接回车,如果这里没有输入密码,以后提交博客更新的时候就不需要输入密码了.</p>
+<h3 id="添加SSH-Key到github"><a href="#添加SSH-Key到github" class="headerlink" title="添加SSH Key到github"></a>添加SSH Key到github</h3><p>经过第二步，如果你没有指定文件名（也就是使用的默认文件名），那么你的.ssh文件夹下，应该有一个id_rsa.pub文件了，打开该文件，复制里面的文本。然后登陆github，点击右上角头像右边的三角图标，点击Settings，然后在左边菜单栏点击SSH and GPG keys，点击new ssh key，title 随便填一个，在key 栏填入你复制的内容，点击add ssh key，就可以添加一个ssh key了，如下图：<img src="/2016/10/17/Mac搭建Hexo博客2/3.png" alt="3"></p>
+<h3 id="验证SSH-Key是否配置成功"><a href="#验证SSH-Key是否配置成功" class="headerlink" title="验证SSH Key是否配置成功"></a>验证SSH Key是否配置成功</h3><p>在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>如果你创建的key没有设密码的话,直接一顿回车,直到最后提示你<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi yourusername! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure></p>
+<p>说明你的SSH Key添加成功了.如果过程中提示你preimission deny相关错误,就在命令前加上<code>sudo</code>然后执行命令的时候输入你的appleid密码应该就可以了.<code>sudo</code>用来说明用管理员权限运行.</p>
+<p>以上简略介绍了怎么配置SSH Key,如果想知道命令里面参数的含义,或者配置过程不顺利的话,可以看<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">这里</a>的详细教程.</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>经过以上的步骤,安装Hexo就可以使用npm命令了,而Hexo安装就是使用npm,在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<p>然后等一会儿,hexo会自动完成下载安装,安装完成之后,在你喜欢的位置随意创建一个文件夹,这个文件夹以后就是你存放本地博客的地方了,通过<code>cd filepath</code>(filepath替换成你创建的文件夹目录)命令,进入到你创建的文件夹目录,然后执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>这样Hexo会在该文件夹创建本地博客所需要的一切资源.这样本地博客就搭建好了,输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g  // 全拼是：hexo generate，可以简写成 hexo g</div><div class="line">hexo s  // 全拼是：hexo server，可以简写成 hexo s</div></pre></td></tr></table></figure></p>
+<p>这样就开启了一个本地博客服务器,打开浏览器没在地址栏输入<code>localhost:4000</code>,就可以查看本地博客了,hexo默认生成了一篇hello world的博客.注意,以上hexo开头的命令,执行目录必须是你创建的博客文件夹目录.</p>
+<h3 id="同步Hexo博客到Github"><a href="#同步Hexo博客到Github" class="headerlink" title="同步Hexo博客到Github"></a>同步Hexo博客到Github</h3><p>现在你已经可以在本机查看你的博客了,但是要想让别人通过网络可以查看你的博客,还需要一步,那就是将你的博客发布到github仓库.在terminal终端,将当前目录切换到你的本地博客目录,执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>安装完成之后,打开本地博客目录的<code>_config.yml</code>文件,编辑其中的deploy节点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: git@github.com:yourusername/youusername.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure></p>
+<p>将上面<code>yourusername</code>替换成你的github用户名,你也可以去你开始的时候创建的名为<code>yourusername.guthub.io</code>的仓库直接复制完成的地址,如下图:<img src="/2016/10/17/Mac搭建Hexo博客2/4.png" alt="4"><br>当前复制出来的值,就是通过SSH方式clone的地址,配置完成后,以后提交博客更新不用输入用户名和密码(如果你SSH Key没有设置密码的话);点击上图右上角<code>User Https</code>,复制出来的clone地址也可以配置到repo,但是这样,提交更新的时候,就需要输入用户名密码了</p>
+<p>保存配置之后,在本地博客目录执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean  // clean本地项目，防止缓存</div><div class="line">hexo g      // 根据你编辑的md格式的博客，生成静态网页</div><div class="line">hexo d      // 将本地博客发布到github</div></pre></td></tr></table></figure></p>
+<p><code>hexo g</code>,<code>hexo d</code>这两条命令可以组合成<code>hexo d -g</code>来写,效果是一样的.<br>然后在浏览器地址栏输入<code>yourusername.github.io</code>就可以访问你的博客了,别人也可以通过这个地址访问你的博客</p>
+<p>如果想了解Hexo常用命令可以点击<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">这里</a></p>
+<p>以上就是搭建Mac的全过程了 </p>
+<p>下面分享一些比较好用,好看的Hexo主题<br><a href="https://hexo.io/themes/" target="_blank" rel="external">(一)</a><br><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">(二)</a></p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          SUn的技术博客
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/SUnYX1029" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Hexo &copy; 2016</span>
+    
+      <span class="split">|</span><span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></br> Contact information:<a href="mailto:sunyuxin915@gmail.com">sunyuxin915@gmail.com</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>
