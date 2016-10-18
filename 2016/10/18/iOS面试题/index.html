@@ -139,7 +139,49 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          
+          <h3 id="从网上搜集的各种iOS面试题-会持续更新的"><a href="#从网上搜集的各种iOS面试题-会持续更新的" class="headerlink" title="从网上搜集的各种iOS面试题..会持续更新的"></a>从网上搜集的各种iOS面试题..会持续更新的</h3><hr>
+<h2 id="1-简述OC中的内存管理机制"><a href="#1-简述OC中的内存管理机制" class="headerlink" title="1.简述OC中的内存管理机制"></a>1.简述OC中的内存管理机制</h2><p>OC的内存管理机制是自动引用技术,内存管理的原则是谁开辟谁释放,分为ARC和MRC,MRC就是需要程序员手动管理内存,ARC不需要程序员手动管理内存,系统会自行管理</p>
+<h2 id="2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用"><a href="#2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用" class="headerlink" title="2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?"></a>2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?</h2><p>readWrite : 读写特性,可读可写<br>readonly : 只读,只有getter,没有setter<br>assign : 一般用于基本数据类型和ID类型<br>copy : 拷贝,一般用于NSString,分为深拷贝和浅拷贝,深拷贝拷贝的是对象,浅拷贝拷贝的是指针<br>nonatomic : 原子性,不考虑线程安全,优点是效率高<br>atomic : 原子性,优点是线程安全,缺点是效率低<br>strong : 强引用,和MRC下的retain一样,weak弱引用,类似MRC下的assgin,但是要注意的是strong和weak都是修饰对象类型的属性的,不能修饰基本数据类型,ARC下仍然使用assign修饰基本数据类型</p>
+<h2 id="3-提升UITableView性能的几点建议"><a href="#3-提升UITableView性能的几点建议" class="headerlink" title="3.提升UITableView性能的几点建议"></a>3.提升UITableView性能的几点建议</h2><pre><code>* cell高度计算
+* cells的重用
+* cell快速华东的时候不加载图片,停止滑动的时候加载图片
+* 避免阻塞主线程
+* 缓存下载的图片
+* 不要过多使用XIB(如果可以的话使用storyboard)
+* 使用CoreGraphics
+* 透明度
+</code></pre><h2 id="4-线程同步和异步的区别"><a href="#4-线程同步和异步的区别" class="headerlink" title="4. 线程同步和异步的区别?"></a>4. 线程同步和异步的区别?</h2><p>同步 : 一个线程要等待上一个线程执行完之后才能执行,生活中的例子(上厕所).<br>异步 : 同时去做两个或者多个线程,比如边听歌边喝水.</p>
+<h2 id="5-堆和栈的区别"><a href="#5-堆和栈的区别" class="headerlink" title="5,堆和栈的区别"></a>5,堆和栈的区别</h2><p>堆 : 一般由程序员分配释放,先进先出<br>栈 : 由编译器自动分配释放,存放函数的参数值,局部变量的值,先进后出<br>全局区(静态区) : 全局变量和静态变量,程序结束后由系统释放<br>文字常量区 : 常量字符串存放在这里,程序结束后由系统释放<br>程序代码区 : 存放函数体的二进制文件.</p>
+<h2 id="6-iOS类是否可以多继承"><a href="#6-iOS类是否可以多继承" class="headerlink" title="6.iOS类是否可以多继承?"></a>6.iOS类是否可以多继承?</h2><p>不可以,可以通过delegate 和 protocol和类目来实现类似多继承.</p>
+<h2 id="7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储"><a href="#7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储" class="headerlink" title="7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?"></a>7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?</h2><ul>
+<li>write写入方式,永久保存在磁盘中,只支持NSString,NSData,NSArray.NSDictionary</li>
+<li>NSKeydeArchiver(归档)采用归档的形式来保存数据,该数据对象需要遵守NSCoding协议</li>
+<li>SQLite(FMDB) 注意FMDB不是数据库,而是一个SQLite管理框架</li>
+<li>CoreData切记coredata不是数据库,他的存储和新思想是托管对象,只是咱们经常用的存储文件为SQLite还可以用XML,二进制等方式.</li>
+</ul>
+<h2 id="8-iOS的动态性"><a href="#8-iOS的动态性" class="headerlink" title="8.iOS的动态性"></a>8.iOS的动态性</h2><ul>
+<li>动态类型 : 如id类型.实际上静态类型因为其固定性和可预见性而使用的更加广泛,静态类型是强类型,而动态类型属于罗类型.运行时决定接收者</li>
+<li>动态绑定 : 让地阿妈在运行时判断需要调用什么方法,而不是在编译时</li>
+<li>动态载入 : 让程序在运行时添加代码模块以及其他资源</li>
+</ul>
+<h2 id="9-什么是安全释放"><a href="#9-什么是安全释放" class="headerlink" title="9.什么是安全释放?"></a>9.什么是安全释放?</h2><p>在对象dealloc中release之后再把指针置为nill</p>
+<h2 id="10-RunLoop是什么"><a href="#10-RunLoop是什么" class="headerlink" title="10.RunLoop是什么?"></a>10.RunLoop是什么?</h2><p>一个RunLoop就是一个事件处理的循环,用来不停的调度工作以及处理输入时间,使用runloop的目的是让你的线程在工作的时候忙于工作,没工作的时候处于休眠状态.主要是为了减少CPU武威的空转.每个线程都有RunLoop,主线程的RunLoop是默认开启的,手动开辟的子线程RunLoop是默认不开启的,如果需要开启,需要调用API<code>[[NSRunLoop currentRunloop] run]</code>开启,最常见的需要开启Runloop的是在子线程里面调用计时器(NSTimer),如果不开启runloop循环方法就不能正常执行.</p>
+<h2 id="11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个"><a href="#11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个" class="headerlink" title="11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?"></a>11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define kMIN(X,Y)((X) &gt; (Y))?(Y) : (X))</div></pre></td></tr></table></figure>
+<h2 id="12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期"><a href="#12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期" class="headerlink" title="12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?"></a>12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?</h2><ul>
+<li>进入后台生命周期 :<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(UIApplication*)application;  </div><div class="line">- (void)applicationDidEnterBackground:(UIApplication*)application;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>回到前台生命周期 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillEnterForeground:(UIApplication*)application;  </div><div class="line">- (void)applicationDidBecomActive:(UIApplication*)application;</div></pre></td></tr></table></figure></p>
+<h2 id="13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作"><a href="#13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作" class="headerlink" title="13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?"></a>13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?</h2><ul>
+<li>loadView : 没有正在使用nib视图页面，子类将会创建自己的自定义视图层</li>
+<li>viewDidLoad : 试图被加载后调用</li>
+<li>viewWillAppear ： 试图即将出现的时候调用</li>
+</ul>
+<h2 id="14-描述应用程序启动顺序"><a href="#14-描述应用程序启动顺序" class="headerlink" title="14.描述应用程序启动顺序"></a>14.描述应用程序启动顺序</h2><ul>
+<li>main函数创建UIApplication实例和UIApplication代理实例</li>
+<li>在UIApplication代理实例中重写启动方法,</li>
+</ul>
+
         </div>
       </article>
     </div>
