@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="SUn的技术博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="SUn">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="mac下cocoapods完全使用教程"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="SUn的技术博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="SUn的博客"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>mac下cocoapods完全使用教程 - SUn的博客</title>
+
+
+  <link rel="shortcut icon" href="/images/icon-hi-logo.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/images/logo-hi-logo.svg" alt="SUn的博客" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            mac下cocoapods完全使用教程
+            
+          </h1>
+          <p class="posted-on">
+          2016-10-20
+          </p>
+          <div class="tags-links">
+            
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h3 id="cocoapods出现在什么时候"><a href="#cocoapods出现在什么时候" class="headerlink" title="cocoapods出现在什么时候?"></a>cocoapods出现在什么时候?</h3><p>2014年</p>
+<h3 id="cocoapods是干什么的"><a href="#cocoapods是干什么的" class="headerlink" title="cocoapods是干什么的?"></a>cocoapods是干什么的?</h3><p>管理第三方框架,是一个类库管理工具</p>
+<h3 id="如何安装cocoapods"><a href="#如何安装cocoapods" class="headerlink" title="如何安装cocoapods??"></a>如何安装cocoapods??</h3><p>其实cocoapods的安装步骤非常简单,只需要仅仅几步就可以完成…</p>
+<p>1.如果想使你的cocoapods安装过程不会出现太多错误,那么你需要先更新gem(gem太老,可能会出现问题)<br>可以用下面命令升级gem:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem update --system</div></pre></td></tr></table></figure></p>
+<p>2.替换软件源,因为ruby的软件源是亚马逊云服务,可能会被墙,所以要更新ruby的源,用下面的代码将官方的ruby源替换成国内某宝的源:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://rubygems.org/    </div><div class="line">gem sources -a https://reby.taobao.org/</div><div class="line">gem sources -l  // 查看源是否更变为某宝</div></pre></td></tr></table></figure></p>
+<p>3.使用ruby的gem命令即可安装:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem install cocoapods</div><div class="line">pod setup</div></pre></td></tr></table></figure></p>
+<p>经过以上三部曲cocoapods就安装到你的mac上啦</p>
+<p>补充…<br>苹果系统升级 OS X EL Capitan 后安装改为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem install -n /usr/local/bin cocoapods</div><div class="line">pod setup</div></pre></td></tr></table></figure></p>
+<h3 id="如何查找第三方库"><a href="#如何查找第三方库" class="headerlink" title="如何查找第三方库?"></a>如何查找第三方库?</h3><p>如果你不知道cocoapods管理的库中,是否有你想要的库,那么你可以通过<code>pod search 框架名</code>命令进行查找 比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod search AFNetworking</div></pre></td></tr></table></figure></p>
+<p>就可以找到所有跟 AFNetworking 相关的库</p>
+<h3 id="如何使用cocoapods"><a href="#如何使用cocoapods" class="headerlink" title="如何使用cocoapods?"></a>如何使用cocoapods?</h3><p>在工程文件下,生成podfile文件:描述需要使用哪些框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. cd 进入到跟工程文件下同一级目录下</div><div class="line">2. touch(创建文件) touch podfile </div><div class="line">3. open podfile : 打开podfile进行描述 </div><div class="line">4. pod search : 搜索你想导入的框架并且告诉你如何描述</div><div class="line">5. pod install : 安装</div></pre></td></tr></table></figure></p>
+<p>当你按照提示敲到这里的时候,你回去看下项目目录结构,会出现一个新的名为<code>YourProjectName.xcworkspace</code>的文件,以后项目打开项目就需要通过这个文件打开了而不是<code>YourProjectName.xcodeproj</code>文件</p>
+<h3 id="如何升级cocoapods"><a href="#如何升级cocoapods" class="headerlink" title="如何升级cocoapods?"></a>如何升级cocoapods?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem update -n /usr/local/bin --system</div></pre></td></tr></table></figure>
+<p>输入这段代码即可升级你的cocoapods</p>
+<p>补充…CocoaPods升级到1.0.1以上时，安装第三方库的时候会报如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　The dependency `AFNetworking (~&gt; 3.1.0)` is not used in any concrete target.</div></pre></td></tr></table></figure></p>
+<p>则需要修改Podfile文件的内容,修改之前的Podfile文件的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">platform:ios,&apos;7.0&apos;</div><div class="line">pod &apos;MJRefresh&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">pod &apos;SDWebImage&apos;, &apos;~&gt; 3.7.6&apos;</div><div class="line">pod &apos;SVProgressHUD&apos;, &apos;~&gt; 2.0.3&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div></pre></td></tr></table></figure></p>
+<p>修改之后的Podfile文件的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">platform:ios,&apos;7.0&apos;</div><div class="line">target &quot;MyProject&quot; do</div><div class="line">pod &apos;MJRefresh&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">pod &apos;SDWebImage&apos;, &apos;~&gt; 3.7.6&apos;</div><div class="line">pod &apos;SVProgressHUD&apos;, &apos;~&gt; 2.0.3&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>在Podfile文件中需要明确指出使用第三方库的target,这里target后面跟的就是自己项目本身的Target;也就是项目中的tagrets中的那个项目名称.</p>
+<h3 id="一些常用指令"><a href="#一些常用指令" class="headerlink" title="一些常用指令"></a>一些常用指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Podfile.lock : 第一次使用pod install就会自动生成Podfile.lock,Podfile.lock描述当前加载第三方框架的版本号</div><div class="line">pod install : 根据Podfile.lock去加载依赖第三方库,第一次根据podfile去加载依赖库</div><div class="line">pod update : 更新第三方库的版本号,并且创建新的podfile.lock</div><div class="line">pod repo : 管理第三方库的索引</div><div class="line">pod install --no-repo-update : 不需要更新仓库的索引,直接加载原来记录的版本.开发中一般使用这个命令</div></pre></td></tr></table></figure>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2016/10/18/iOS面试题/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          SUn的技术博客
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/SUnYX1029" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>SUn的博客 &copy; 2016</span>
+    
+      <span class="split">|</span><span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></br> Contact information:<a href="mailto:sunyuxin915@gmail.com">sunyuxin915@gmail.com</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>
