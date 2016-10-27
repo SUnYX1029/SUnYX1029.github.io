@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="about"/>
+      <meta property="og:title" content="iOS视图控制对象生命周期"/>
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>about - SUn的博客</title>
+  <title>iOS视图控制对象生命周期 - SUn的博客</title>
 
 
   <link rel="shortcut icon" href="/images/icon-hi-logo.png">
@@ -125,19 +125,26 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            about
+            iOS视图控制对象生命周期
             
           </h1>
           <p class="posted-on">
-          2016-10-17
+          2016-10-27
           </p>
           <div class="tags-links">
+            
+              
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>关于我自己</p>
+          <p>init- 初始化程序</p>
+<p>viewDidLoad- 加载视图完毕</p>
+<p>viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)</p>
+<p>viewDidAppear- UIViewController对象的视图已经加入到窗口上(完成显示时调用)</p>
+<p>viewWillDisAppear- UIViewController对象的视图即将消失,被覆盖或是隐藏时调用</p>
+<p>viewDidDisAppear- UIViewController对象的视图已经消失,被覆盖或是隐藏时调用</p>
 
         </div>
       </article>
@@ -149,6 +156,14 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
+        <div class="nav-previous">
+          <a href="/2016/10/27/PCH文件使用指南/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2016/10/20/mac下cocoapods完全使用教程/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
       
     </div>
 
