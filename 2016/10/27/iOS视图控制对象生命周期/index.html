@@ -149,9 +149,9 @@
 <h3 id="下面先来看实例图片"><a href="#下面先来看实例图片" class="headerlink" title="下面先来看实例图片."></a>下面先来看实例图片.</h3><p><img src="/2016/10/27/iOS视图控制对象生命周期/1.gif" alt="gif"></p>
 <p>这张gif的大致内容是这样的:</p>
 <ul>
-<li>在一个TabBarcontroller里面有两个子控制器</li>
+<li>在一个TabBarController里面有两个子控制器</li>
 <li>两个控制器分别在这些方法调用的时候打印输出</li>
-<li>当程序一启动的时候,会将第一个控制器的view压入栈,并显示,所以one.view会打印viewDidLoad方法,</li>
+<li>当程序一启动的时候,会将两个控制器addChildViewController,并且将第一个childViewController的view添加到TabBarController显示View的View伤,所以one.view会打印viewDidLoad方法,</li>
 <li>当点击TabBar,会显示two.view,而one.view会移除视野,所以<code>[sunTwo viewDidLoad]</code>,<code>[sunTwo viewWillAppear:]</code>,<code>[sunOne viewWillDisappear:]</code>,<code>[sunOne viewDidDisappear:]</code>,<code>[sunTwo viewDidAppear:]</code>会依次打印</li>
 </ul>
 
