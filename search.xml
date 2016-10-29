@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[PCH文件使用指南]]></title>
+      <url>http://yoursite.com/2016/10/27/PCH%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+      <content type="html"><![CDATA[<h3 id="非常简单的小贴士"><a href="#非常简单的小贴士" class="headerlink" title="非常简单的小贴士"></a>非常简单的小贴士</h3><p>下面直接上图…..<br><a id="more"></a><br><img src="/2016/10/27/PCH文件使用指南/1.png" alt="pch1"><br><img src="/2016/10/27/PCH文件使用指南/2.png" alt="pch2"></p>
+<p>下面是对前面两张图片的解释</p>
+<p>PCH文件使用方法:</p>
+<ul>
+<li>在目录下新建<code>PCH文件</code></li>
+<li>进入到项目的<code>Build Settings</code> 搜索 <code>prefix Head</code></li>
+<li>找到<code>Precompile Prefix Header</code>并且勾选为<code>YES</code></li>
+<li>双击<code>Prefix Header</code>会弹出地址栏,将PCH文件的全路径拷贝过去</li>
+<li>最后最好编译一下检查有没有出错</li>
+</ul>
+<p>用PCH,就是这么简单!!!</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[iOS视图控制对象生命周期]]></title>
+      <url>http://yoursite.com/2016/10/27/iOS%E8%A7%86%E5%9B%BE%E6%8E%A7%E5%88%B6%E5%AF%B9%E8%B1%A1%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+      <content type="html"><![CDATA[<p>init- 初始化对象 </p>
+<p>viewDidLoad- 加载视图完毕</p>
+<p>viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)</p>
+<a id="more"></a>
+<p>viewDidAppear- UIViewController对象的视图已经加入到窗口上(完成显示时调用)</p>
+<p>viewWillDisAppear- UIViewController对象的视图即将消失,被覆盖或是隐藏时调用</p>
+<p>viewDidDisAppear- UIViewController对象的视图已经消失,被覆盖或是隐藏时调用</p>
+<p>dealloc- 对象被销毁时调用</p>
+<h3 id="下面先来看实例图片"><a href="#下面先来看实例图片" class="headerlink" title="下面先来看实例图片."></a>下面先来看实例图片.</h3><p><img src="/2016/10/27/iOS视图控制对象生命周期/1.gif" alt="gif"></p>
+<p>这张gif的大致内容是这样的:</p>
+<ul>
+<li>在一个TabBarController里面有两个子控制器</li>
+<li>两个控制器分别在这些方法调用的时候打印输出</li>
+<li>当程序一启动的时候,会将两个控制器addChildViewController,并且将第一个childViewController的view添加到TabBarController显示View的View伤,所以one.view会打印viewDidLoad方法,</li>
+<li>当点击TabBar,会显示two.view,而one.view会移除视野,所以<code>[sunTwo viewDidLoad]</code>,<code>[sunTwo viewWillAppear:]</code>,<code>[sunOne viewWillDisappear:]</code>,<code>[sunOne viewDidDisappear:]</code>,<code>[sunTwo viewDidAppear:]</code>会依次打印</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mac下cocoapods完全使用教程]]></title>
+      <url>http://yoursite.com/2016/10/20/mac%E4%B8%8Bcocoapods%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="cocoapods出现在什么时候"><a href="#cocoapods出现在什么时候" class="headerlink" title="cocoapods出现在什么时候?"></a>cocoapods出现在什么时候?</h3><p>2014年</p>
+<h3 id="cocoapods是干什么的"><a href="#cocoapods是干什么的" class="headerlink" title="cocoapods是干什么的?"></a>cocoapods是干什么的?</h3><p>管理第三方框架,是一个类库管理工具,当你的框架非常多,又必须下的时候,你就需要这样一款软件来帮你管理框架了.</p>
+<a id="more"></a>
+<h3 id="如何安装cocoapods"><a href="#如何安装cocoapods" class="headerlink" title="如何安装cocoapods??"></a>如何安装cocoapods??</h3><p>其实cocoapods的安装步骤非常简单,只需要仅仅几步就可以完成…</p>
+<p>1.如果想使你的cocoapods安装过程不会出现太多错误,那么你需要先更新gem(gem太老,可能会出现问题)<br>可以用下面命令升级gem:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem update --system</div></pre></td></tr></table></figure></p>
+<p>2.替换软件源,因为ruby的软件源是亚马逊云服务,可能会被墙,所以要更新ruby的源,用下面的代码将官方的ruby源替换成国内某宝的源:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://rubygems.org/    </div><div class="line">gem sources -a https://reby.taobao.org/</div><div class="line">gem sources -l  // 查看源是否更变为某宝</div></pre></td></tr></table></figure></p>
+<p>3.使用ruby的gem命令即可安装:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem install cocoapods</div><div class="line">pod setup</div></pre></td></tr></table></figure></p>
+<p>经过以上三部曲cocoapods就安装到你的mac上啦</p>
+<p>补充…<br>苹果系统升级 OS X EL Capitan 后安装改为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem install -n /usr/local/bin cocoapods</div><div class="line">pod setup</div></pre></td></tr></table></figure></p>
+<h3 id="如何查找第三方库"><a href="#如何查找第三方库" class="headerlink" title="如何查找第三方库?"></a>如何查找第三方库?</h3><p>如果你不知道cocoapods管理的库中,是否有你想要的库,那么你可以通过<code>pod search 框架名</code>命令进行查找 比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod search AFNetworking</div></pre></td></tr></table></figure></p>
+<p>就可以找到所有跟 AFNetworking 相关的库</p>
+<h3 id="如何使用cocoapods"><a href="#如何使用cocoapods" class="headerlink" title="如何使用cocoapods?"></a>如何使用cocoapods?</h3><p>在工程文件下,生成podfile文件:描述需要使用哪些框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. cd 进入到跟工程文件下同一级目录下</div><div class="line">2. touch(创建文件) touch podfile </div><div class="line">3. open podfile : 打开podfile进行描述(不会描述?请往下看) </div><div class="line">4. pod search : 搜索你想导入的框架并且告诉你如何描述</div><div class="line">5. pod install : 安装</div></pre></td></tr></table></figure></p>
+<p>关于如何描述:我们以AFNetwworking为例:<br>当你使用 <code>pod search AFNetworking</code> 命令是这样子的:<br><img src="/2016/10/20/mac下cocoapods完全使用教程/2.png" alt="2"></p>
+<p>将图片中<code>pod &#39;AFNetworking&#39;, &#39;~&gt; 3.1.0&#39;</code>这段代码复制到你的podfile文件中即可</p>
+<p>当你按照提示敲到这里的时候,你回去看下项目目录结构,会出现一个新的名为<code>YourProjectName.xcworkspace</code>的文件,以后项目打开项目就需要通过这个文件打开了而不是<code>YourProjectName.xcodeproj</code>文件</p>
+<h3 id="如何升级cocoapods"><a href="#如何升级cocoapods" class="headerlink" title="如何升级cocoapods?"></a>如何升级cocoapods?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem update -n /usr/local/bin --system</div></pre></td></tr></table></figure>
+<p>输入这段代码即可升级你的cocoapods</p>
+<p>补充…CocoaPods升级到1.0.1以上时，安装第三方库的时候会报如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　The dependency `AFNetworking (~&gt; 3.1.0)` is not used in any concrete target.</div></pre></td></tr></table></figure></p>
+<p>则需要修改Podfile文件的内容,修改之前的Podfile文件的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">platform:ios,&apos;7.0&apos;</div><div class="line">pod &apos;MJRefresh&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">pod &apos;SDWebImage&apos;, &apos;~&gt; 3.7.6&apos;</div><div class="line">pod &apos;SVProgressHUD&apos;, &apos;~&gt; 2.0.3&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div></pre></td></tr></table></figure></p>
+<p>修改之后的Podfile文件的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">platform:ios,&apos;7.0&apos;</div><div class="line">target &quot;MyProject&quot; do</div><div class="line">pod &apos;MJRefresh&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">pod &apos;SDWebImage&apos;, &apos;~&gt; 3.7.6&apos;</div><div class="line">pod &apos;SVProgressHUD&apos;, &apos;~&gt; 2.0.3&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>在Podfile文件中需要明确指出使用第三方库的target,这里target后面跟的就是自己项目本身的Target;也就是项目中的tagrets中的那个项目名称.</p>
+<h3 id="一些常用指令"><a href="#一些常用指令" class="headerlink" title="一些常用指令"></a>一些常用指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Podfile.lock : 第一次使用pod install就会自动生成Podfile.lock,Podfile.lock描述当前加载第三方框架的版本号</div><div class="line">pod install : 根据Podfile.lock去加载依赖第三方库,第一次根据podfile去加载依赖库</div><div class="line">pod update : 更新第三方库的版本号,并且创建新的podfile.lock</div><div class="line">pod repo : 管理第三方库的索引</div><div class="line">pod install --no-repo-update : 不需要更新仓库的索引,直接加载原来记录的版本.开发中一般使用这个命令</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[iOS面试题]]></title>
+      <url>http://yoursite.com/2016/10/18/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h3 id="从网上搜集的各种iOS面试题-会持续更新的"><a href="#从网上搜集的各种iOS面试题-会持续更新的" class="headerlink" title="从网上搜集的各种iOS面试题..会持续更新的"></a>从网上搜集的各种iOS面试题..会持续更新的</h3><hr>
+<h2 id="1-简述OC中的内存管理机制"><a href="#1-简述OC中的内存管理机制" class="headerlink" title="1.简述OC中的内存管理机制"></a>1.简述OC中的内存管理机制</h2><p>OC的内存管理机制是自动引用技术,内存管理的原则是谁开辟谁释放,分为ARC和MRC,MRC就是需要程序员手动管理内存,ARC不需要程序员手动管理内存,系统会自行管理</p>
+<a id="more"></a>
+<h2 id="2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用"><a href="#2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用" class="headerlink" title="2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?"></a>2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?</h2><p>readWrite : 读写特性,可读可写<br>readonly : 只读,只有getter,没有setter<br>assign : 一般用于基本数据类型和ID类型<br>copy : 拷贝,一般用于NSString,分为深拷贝和浅拷贝,深拷贝拷贝的是对象,浅拷贝拷贝的是指针<br>nonatomic : 原子性,不考虑线程安全,优点是效率高<br>atomic : 原子性,优点是线程安全,缺点是效率低<br>strong : 强引用,和MRC下的retain一样,weak弱引用,类似MRC下的assgin,但是要注意的是strong和weak都是修饰对象类型的属性的,不能修饰基本数据类型,ARC下仍然使用assign修饰基本数据类型</p>
+<h2 id="3-提升UITableView性能的几点建议"><a href="#3-提升UITableView性能的几点建议" class="headerlink" title="3.提升UITableView性能的几点建议"></a>3.提升UITableView性能的几点建议</h2><ul>
+<li>cell高度计算</li>
+<li>cells的重用</li>
+<li>cell快速华东的时候不加载图片,停止滑动的时候加载图片</li>
+<li>避免阻塞主线程</li>
+<li>缓存下载的图片</li>
+<li>不要过多使用XIB(如果可以的话使用storyboard)</li>
+<li>使用CoreGraphics</li>
+<li>透明度</li>
+</ul>
+<h2 id="4-线程同步和异步的区别"><a href="#4-线程同步和异步的区别" class="headerlink" title="4. 线程同步和异步的区别?"></a>4. 线程同步和异步的区别?</h2><p>同步 : 一个线程要等待上一个线程执行完之后才能执行,生活中的例子(上厕所).<br>异步 : 同时去做两个或者多个线程,比如边听歌边喝水.</p>
+<h2 id="5-堆和栈的区别"><a href="#5-堆和栈的区别" class="headerlink" title="5,堆和栈的区别"></a>5,堆和栈的区别</h2><p>堆 : 一般由程序员分配释放,先进先出<br>栈 : 由编译器自动分配释放,存放函数的参数值,局部变量的值,先进后出<br>全局区(静态区) : 全局变量和静态变量,程序结束后由系统释放<br>文字常量区 : 常量字符串存放在这里,程序结束后由系统释放<br>程序代码区 : 存放函数体的二进制文件.</p>
+<h2 id="6-iOS类是否可以多继承"><a href="#6-iOS类是否可以多继承" class="headerlink" title="6.iOS类是否可以多继承?"></a>6.iOS类是否可以多继承?</h2><p>不可以,可以通过delegate 和 protocol和类目来实现类似多继承.</p>
+<h2 id="7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储"><a href="#7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储" class="headerlink" title="7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?"></a>7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?</h2><ul>
+<li>write写入方式,永久保存在磁盘中,只支持NSString,NSData,NSArray.NSDictionary</li>
+<li>NSKeydeArchiver(归档)采用归档的形式来保存数据,该数据对象需要遵守NSCoding协议</li>
+<li>SQLite(FMDB) 注意FMDB不是数据库,而是一个SQLite管理框架</li>
+<li>CoreData切记coredata不是数据库,他的存储和新思想是托管对象,只是咱们经常用的存储文件为SQLite还可以用XML,二进制等方式.</li>
+</ul>
+<h2 id="8-iOS的动态性"><a href="#8-iOS的动态性" class="headerlink" title="8.iOS的动态性"></a>8.iOS的动态性</h2><ul>
+<li>动态类型 : 如id类型.实际上静态类型因为其固定性和可预见性而使用的更加广泛,静态类型是强类型,而动态类型属于罗类型.运行时决定接收者</li>
+<li>动态绑定 : 让地阿妈在运行时判断需要调用什么方法,而不是在编译时</li>
+<li>动态载入 : 让程序在运行时添加代码模块以及其他资源</li>
+</ul>
+<h2 id="9-什么是安全释放"><a href="#9-什么是安全释放" class="headerlink" title="9.什么是安全释放?"></a>9.什么是安全释放?</h2><p>在对象dealloc中release之后再把指针置为nill</p>
+<h2 id="10-RunLoop是什么"><a href="#10-RunLoop是什么" class="headerlink" title="10.RunLoop是什么?"></a>10.RunLoop是什么?</h2><p>一个RunLoop就是一个事件处理的循环,用来不停的调度工作以及处理输入时间,使用runloop的目的是让你的线程在工作的时候忙于工作,没工作的时候处于休眠状态.主要是为了减少CPU武威的空转.每个线程都有RunLoop,主线程的RunLoop是默认开启的,手动开辟的子线程RunLoop是默认不开启的,如果需要开启,需要调用API<code>[[NSRunLoop currentRunloop] run]</code>开启,最常见的需要开启Runloop的是在子线程里面调用计时器(NSTimer),如果不开启runloop循环方法就不能正常执行.</p>
+<h2 id="11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个"><a href="#11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个" class="headerlink" title="11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?"></a>11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define kMIN(X,Y)((X) &gt; (Y))?(Y) : (X))</div></pre></td></tr></table></figure>
+<h2 id="12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期"><a href="#12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期" class="headerlink" title="12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?"></a>12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?</h2><ul>
+<li><p>进入后台生命周期 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(UIApplication*)application;  </div><div class="line">- (void)applicationDidEnterBackground:(UIApplication*)application;</div></pre></td></tr></table></figure>
+</li>
+<li><p>回到前台生命周期 : </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillEnterForeground:(UIApplication*)application;  </div><div class="line">- (void)applicationDidBecomActive:(UIApplication*)application;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作"><a href="#13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作" class="headerlink" title="13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?"></a>13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?</h2><ul>
+<li>loadView : 没有正在使用nib视图页面，子类将会创建自己的自定义视图层</li>
+<li>viewDidLoad : 试图被加载后调用</li>
+<li>viewWillAppear ： 试图即将出现的时候调用</li>
+</ul>
+<h2 id="14-简单说一下APP的启动过程"><a href="#14-简单说一下APP的启动过程" class="headerlink" title="14.简单说一下APP的启动过程"></a>14.简单说一下APP的启动过程</h2><p>程序启动分为两类:1.有storyboard 2.没有storyboard<br>有storyboard情况下:<br>1.main函数<br>2.UIApplicationMain</p>
+<ul>
+<li>创建UIApplication对象</li>
+<li>创建UIApplication的delegate对象<br>3.根据Info.plist获得最主要storyboard的文件名,加载最主要的storyboard(有storyboard)</li>
+<li>创建UIWindow</li>
+<li>创建和设置UIWindow的rootViewController</li>
+<li>显示窗口</li>
+</ul>
+<p>没有storyboard情况下:<br>1.main函数<br>2.UIApplicationMain</p>
+<ul>
+<li>创建UIApplication对象</li>
+<li>创建UIApplication的delegate对象<br>3.delegate对象开始处理(监听)系统事件(没有storyboard)</li>
+<li>程序启动完毕的时候, 就会调用代理的application:didFinishLaunchingWithOptions:方法</li>
+<li>在application:didFinishLaunchingWithOptions:中创建UIWindow</li>
+<li>创建和设置UIWindow的rootViewController</li>
+<li>显示窗口<h2 id="15-引用程序的代理方法有哪些"><a href="#15-引用程序的代理方法有哪些" class="headerlink" title="15.引用程序的代理方法有哪些?"></a>15.引用程序的代理方法有哪些?</h2></li>
+<li>程序加载完毕：application: didFinishLaunchingWithOptions:</li>
+<li>程序获取焦点：applicationDidBecomeActive:</li>
+<li>程序进入后台：applicationDidEnterBackground:</li>
+<li>程序失去焦点：applicationWillResignActive:</li>
+<li>程序从后台回到前台：applicationWillEnterForeground</li>
+<li>内存警告，可能要终止程序：applicationDidReceiveMemoryWarning:</li>
+<li>程序即将退出：applicationWillTerminate:</li>
+</ul>
+<p>##16.控制器的声明周期?</p>
+<ul>
+<li>loadView(加载控制器的view时调用) -&gt;</li>
+<li>viewDidLoad(控制器的view加载完毕时调用) -&gt;</li>
+<li>viewWillAppear(控制器的view即将显示时调用) -&gt;</li>
+<li>viewDidAppear(控制器的view完全显示时调用) -&gt;</li>
+<li>viewWillDisappear(控制器的view即将消失时调用) -&gt;</li>
+<li>viewDidDisappear(控制器的view完全消失时调用) -&gt; </li>
+<li>didReceiveMemoryWarning(控制器接收到从UIApplication传来的内存警告时调用,询问view是否可以被销毁(view不在window上就可以销毁)) -&gt;</li>
+<li>viewWillUnload(控制器的view即将销毁时调用) -&gt;</li>
+<li>销毁view(此时控制器的属性都没有被清理) -&gt;</li>
+<li>viewDidUnload(控制器的view完全销毁时调用,清空控制器内不需要的属性) -&gt;</li>
+<li>loadView(需要再次显示控制器是在调用) 往复循环</li>
+</ul>
+<h2 id="17-事件处理-如何寻找最合适的view"><a href="#17-事件处理-如何寻找最合适的view" class="headerlink" title="17.事件处理,如何寻找最合适的view?"></a>17.事件处理,如何寻找最合适的view?</h2><p>1.先判断自己能不能接受触摸事件,如果不能,交给自己的父控件处理事件 如果能<br>2.判断当前点在不在自己身上,如果不能,交给自己的父控件处理事件,如果在自己身上<br>3.从后往前遍历自己的子控件,遍历出每个子控件之后,重复前面的步骤<br>4.如果没有符合条件的子控件,那么它自己就是最合适的view</p>
+<h2 id="18-事件的响应"><a href="#18-事件的响应" class="headerlink" title="18.事件的响应:"></a>18.事件的响应:</h2><p>当用户点击屏幕产生的一个触摸事件,经过一系列传递之后,会找到最合适的视图来处理这个事件<br>找到最合适的视图控件之后,就会调用控件的touchs方法来具体处理事件<br>这些touches方法的默认做法是将事件顺着响应者链条向上传递</p>
+<p>什么是响应者链条:<br>多个响应者对象连接起来的链条</p>
+<p>什么是响应者对象:<br>继承了 UIResponder对象我们称之为响应者对象,也就是能处理事件的对象</p>
+<h2 id="19-事件传递的完整过程"><a href="#19-事件传递的完整过程" class="headerlink" title="19.事件传递的完整过程"></a>19.事件传递的完整过程</h2><ul>
+<li>在产生一个事件时,系统会将该事件加入到一个由UIApplication管理的事件队列中,</li>
+<li>UIApplication会从事件队列中取出最前面的事件,将它传递给先发送事件给应用程序的主窗口.</li>
+<li>主窗口会调用hitTest方法寻找最适合的视图控件,找到后就会调用视图控件的touches方法来做具体的事情.</li>
+<li>当调用touches方法,它的默认做法, 就会将事件顺着响应者链条往上传递，</li>
+<li>传递给上一个响应者,接着就会调用上一个响应者的touches方法</li>
+</ul>
+<p>如何去寻找上一个响应者?<br>1.如果当前的View是控制器的View,那么控制器就是上一个响应者.<br>2.如果当前的View不是控制器的View,那么它的父控件就是上一个响应者.<br>3.在视图层次结构的最顶级视图，如果也不能处理收到的事件或消息，则其将事件或消息传递给window对象进行处理<br>4.如果window对象也不处理，则其将事件或消息传递给UIApplication对象<br>5.如果UIApplication也不能处理该事件或消息，则将其丢弃</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Mac搭建Hexo博客]]></title>
+      <url>http://yoursite.com/2015/10/17/Mac%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>技术大牛都有自己的博客,而且感觉非常漂亮.比QQ空间之类的好看多了.正好最近也想自己搭建个博客,记录下自己的学习经历吧,给自己留点回忆,同时整理下自己的思路.最重要的是大家看到这篇博文之后也可以搭建属于自己的博客了,所以,说干就干!</p>
+<a id="more"></a>
+<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>1.基于Hexo和gethub pages搭建静态博客<br>2.主题分享</p>
+<h1 id="基础准备"><a href="#基础准备" class="headerlink" title="基础准备"></a>基础准备</h1><h2 id="正式搭建博客-要想使用Hexo和github-pages搭建博客-需要以下环境"><a href="#正式搭建博客-要想使用Hexo和github-pages搭建博客-需要以下环境" class="headerlink" title="正式搭建博客!要想使用Hexo和github pages搭建博客,需要以下环境"></a>正式搭建博客!要想使用Hexo和github pages搭建博客,需要以下环境</h2><p>1.Github账号一枚 ,并创建一个指定名字的repo<br>2.Homebrew套件管理器,主要用来安装git和node.js<br>3.Git版本管理工具<br>4.node.js<br>5.配置SSH Key(可忽略)<br>6.安装Hexo<br>7.同步Hexo博客到github<br>这些东西都不熟悉没关系，下面都会详细介绍。</p>
+<h2 id="注册Github账号并创建repo"><a href="#注册Github账号并创建repo" class="headerlink" title="注册Github账号并创建repo"></a>注册Github账号并创建repo</h2><p>因为博客是基于github pages的,也就是你的博客内容是托管在gethub pages 所以我们需要有一个github账号,并且创建一个publicrepo来存放你的博客 如果你还没有github账号,去<a href="https://github.com/join?source=header-home" target="_blank" rel="external">这里</a>申请一个就好了,申请步骤很简单记住创建public库 private是要收费的,我们用github主要就是拥抱开源.</p>
+<p>申请完账号,登陆之后 就可以创建repo了 点击<code>New repository</code>:<img src="/2015/10/17/Mac搭建Hexo博客/1.png" alt="1"><br>会跳转到这个界面:<br><img src="/2015/10/17/Mac搭建Hexo博客/2.png" alt="2"> 需要注意的地方我已经做了标注,最需要注意的就是你创建的库的名字,必须是<code>username.github.io</code>等创建库的时候,把<code>username</code>换成你的用户名就可以了,点击<code>creat repository</code>就可以把仓库创建出来.</p>
+<p>要想进一步深入了解github,可以阅读这些资料:</p>
+<p><a href="https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md" target="_blank" rel="external">Github秘籍</a></p>
+<p><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GoGithub</a></p>
+<p><a href="http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/" target="_blank" rel="external">stormzhang 从0开始学习github系列</a></p>
+<h2 id="安装Homebrew套件管理器"><a href="#安装Homebrew套件管理器" class="headerlink" title="安装Homebrew套件管理器"></a>安装Homebrew套件管理器</h2><p>我们安装Homebrew的目的是方便安装git和node.js 但是Homebrew需要你的mac安装Xcode,其实很多mac应用也需要Xcode,所以建议安装一下,appstore里就有.装完Xcode之后,剩下的步骤就特别简单了,打开mac terminal终端,输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
+<p>就可以自动完成该工具的安装,如果这条命令失效了,可能是Homebrew更新了安装方式可以去<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">这里</a>查看最新安装命令以及Homebrew的简要介绍.Homebrew安装完成之后,安装get和node.js简直简单的不要不要的.</p>
+<p>Homebrew一些常用命令可以阅读以下资料:</p>
+<p><a href="http://www.qetee.com/exp/other/homebrew/" target="_blank" rel="external">Homebrew常用命令</a></p>
+<h3 id="安装Git版本管理工具"><a href="#安装Git版本管理工具" class="headerlink" title="安装Git版本管理工具"></a>安装Git版本管理工具</h3><p>Git是一个强大的版本管理工具，Github的版本管理就是基于Git的，现在svn基本过时了，使用Git进行版本管理才是王道。安装完Homebrew之后，安装Git几乎零成本，还是在terminal终端，输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install git</div></pre></td></tr></table></figure></p>
+<p>然后等一段时间就OK了,Homebrew会自动帮你完成下载安装.</p>
+<p>Git使用教程,可以参考以下资料:</p>
+<p><a href="http://stormzhang.com/github/2016/06/19/learn-github-from-zero-summary/" target="_blank" rel="external">stormzhang Git快速应用系列</a></p>
+<p><a href="http://git.oschina.net/progit/" target="_blank" rel="external">Pro Git中文版</a></p>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Hexo是基于node.js的,所以要让Hexo运行,node.js环境是必不可少的,使用Homebrew安装node.js也特别简单,在treminal终端输入如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure></p>
+<p>然后等着Homebrew帮你完成下载安装就可以了,舒爽到爆炸!安装完node.js就可以使用常见的npm命令了 </p>
+<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>这一步可以忽略，配置SSH key与否，并不影响博客的搭建和使用，只是配置了之后，更新博客方便一点，不用每次都输用户名和密码.</p>
+<h3 id="检查本机上是否存在SSH-key"><a href="#检查本机上是否存在SSH-key" class="headerlink" title="检查本机上是否存在SSH key"></a>检查本机上是否存在SSH key</h3><p>打开终端,输入如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd .ssh</div><div class="line">ls -la</div></pre></td></tr></table></figure></p>
+<p>检查终端输出的文件列表中是否已经存在id_rsa.pub 或 id_dsa.pub 文件，如果文件已经存在，那么你可以跳过步骤2，直接进入步骤3.</p>
+<h3 id="创建一个SSH-Key"><a href="#创建一个SSH-Key" class="headerlink" title="创建一个SSH Key"></a>创建一个SSH Key</h3><p>在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure></p>
+<p>回车,接着会提示你让你输入文件名,直接回车会创建使用默认文件名的文件（推荐使用默认文件名);然后会提示你输入两次密码（输入密码之后没有反馈,显示还是空白,但是你确实已经输入了）,当然密码也可以不输,直接回车,如果这里没有输入密码,以后提交博客更新的时候就不需要输入密码了.</p>
+<h3 id="添加SSH-Key到github"><a href="#添加SSH-Key到github" class="headerlink" title="添加SSH Key到github"></a>添加SSH Key到github</h3><p>经过第二步，如果你没有指定文件名（也就是使用的默认文件名），那么你的.ssh文件夹下，应该有一个id_rsa.pub文件了，打开该文件，复制里面的文本。然后登陆github，点击右上角头像右边的三角图标，点击Settings，然后在左边菜单栏点击SSH and GPG keys，点击new ssh key，title 随便填一个，在key 栏填入你复制的内容，点击add ssh key，就可以添加一个ssh key了，如下图：<img src="/2015/10/17/Mac搭建Hexo博客/3.png" alt="3"></p>
+<h3 id="验证SSH-Key是否配置成功"><a href="#验证SSH-Key是否配置成功" class="headerlink" title="验证SSH Key是否配置成功"></a>验证SSH Key是否配置成功</h3><p>在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>如果你创建的key没有设密码的话,直接一顿回车,直到最后提示你<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi yourusername! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure></p>
+<p>说明你的SSH Key添加成功了.如果过程中提示你preimission deny相关错误,就在命令前加上<code>sudo</code>然后执行命令的时候输入你的appleid密码应该就可以了.<code>sudo</code>用来说明用管理员权限运行.</p>
+<p>以上简略介绍了怎么配置SSH Key,如果想知道命令里面参数的含义,或者配置过程不顺利的话,可以看<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">这里</a>的详细教程.</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>经过以上的步骤,安装Hexo就可以使用npm命令了,而Hexo安装就是使用npm,在终端输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<p>然后等一会儿,hexo会自动完成下载安装,安装完成之后,在你喜欢的位置随意创建一个文件夹,这个文件夹以后就是你存放本地博客的地方了,通过<code>cd filepath</code>(filepath替换成你创建的文件夹目录)命令,进入到你创建的文件夹目录,然后执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>这样Hexo会在该文件夹创建本地博客所需要的一切资源.这样本地博客就搭建好了,输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g  // 全拼是：hexo generate，可以简写成 hexo g</div><div class="line">hexo s  // 全拼是：hexo server，可以简写成 hexo s</div></pre></td></tr></table></figure></p>
+<p>这样就开启了一个本地博客服务器,打开浏览器没在地址栏输入<code>localhost:4000</code>,就可以查看本地博客了,hexo默认生成了一篇hello world的博客.注意,以上hexo开头的命令,执行目录必须是你创建的博客文件夹目录.</p>
+<h3 id="同步Hexo博客到Github"><a href="#同步Hexo博客到Github" class="headerlink" title="同步Hexo博客到Github"></a>同步Hexo博客到Github</h3><p>现在你已经可以在本机查看你的博客了,但是要想让别人通过网络可以查看你的博客,还需要一步,那就是将你的博客发布到github仓库.在terminal终端,将当前目录切换到你的本地博客目录,执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>安装完成之后,打开本地博客目录的<code>_config.yml</code>文件,编辑其中的deploy节点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: git@github.com:yourusername/youusername.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure></p>
+<p>将上面<code>yourusername</code>替换成你的github用户名,你也可以去你开始的时候创建的名为<code>yourusername.guthub.io</code>的仓库直接复制完成的地址,如下图:<img src="/2015/10/17/Mac搭建Hexo博客/4.png" alt="4"><br>当前复制出来的值,就是通过SSH方式clone的地址,配置完成后,以后提交博客更新不用输入用户名和密码(如果你SSH Key没有设置密码的话);点击上图右上角<code>User Https</code>,复制出来的clone地址也可以配置到repo,但是这样,提交更新的时候,就需要输入用户名密码了</p>
+<p>保存配置之后,在本地博客目录执行以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean  // clean本地项目，防止缓存</div><div class="line">hexo g      // 根据你编辑的md格式的博客，生成静态网页</div><div class="line">hexo d      // 将本地博客发布到github</div></pre></td></tr></table></figure></p>
+<p><code>hexo g</code>,<code>hexo d</code>这两条命令可以组合成<code>hexo d -g</code>来写,效果是一样的.<br>然后在浏览器地址栏输入<code>yourusername.github.io</code>就可以访问你的博客了,别人也可以通过这个地址访问你的博客</p>
+<p>如果想了解Hexo常用命令可以点击<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">这里</a></p>
+<p><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="external">这里是从网上搜集的Hexo常用指令笔记</a></p>
+<p>以上就是搭建Mac的全过程了 </p>
+<p>下面分享一些比较好用,好看的Hexo主题.</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="external">(一)</a><br><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">(二)</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
