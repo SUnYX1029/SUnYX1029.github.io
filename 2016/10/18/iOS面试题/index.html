@@ -24,7 +24,7 @@
 <meta property="og:description" content="从网上搜集的各种iOS面试题..会持续更新的
 1.简述OC中的内存管理机制OC的内存管理机制是自动引用技术,内存管理的原则是谁开辟谁释放,分为ARC和MRC,MRC就是需要程序员手动管理内存,ARC不需要程序员手动管理内存,系统会自行管理">
 <meta property="og:image" content="http://yoursite.com/2016/10/18/iOS面试题/1.jpg">
-<meta property="og:updated_time" content="2016-10-29T08:07:36.000Z">
+<meta property="og:updated_time" content="2016-11-02T01:52:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS面试题">
 <meta name="twitter:description" content="从网上搜集的各种iOS面试题..会持续更新的
@@ -392,6 +392,37 @@
 <li>传递给上一个响应者,接着就会调用上一个响应者的touches方法</li>
 </ul>
 <p>如何去寻找上一个响应者?<br>1.如果当前的View是控制器的View,那么控制器就是上一个响应者.<br>2.如果当前的View不是控制器的View,那么它的父控件就是上一个响应者.<br>3.在视图层次结构的最顶级视图，如果也不能处理收到的事件或消息，则其将事件或消息传递给window对象进行处理<br>4.如果window对象也不处理，则其将事件或消息传递给UIApplication对象<br>5.如果UIApplication也不能处理该事件或消息，则将其丢弃</p>
+<p>—————————————-我是分割线—————————————–</p>
+<h2 id="20-UIWindow和UIView和-CALayer-的联系和区别"><a href="#20-UIWindow和UIView和-CALayer-的联系和区别" class="headerlink" title="20.UIWindow和UIView和 CALayer 的联系和区别?"></a>20.UIWindow和UIView和 CALayer 的联系和区别?</h2><ul>
+<li>UIView是视图的基类比,UIViewController是视图控制器的基类,UIResponder是表示一个可以在屏幕上响应触摸时间的对象</li>
+<li>UIwindow是UIView的子类,UIwindow的主要作用:一是提供一个区域来显示UIView,二是将事件(event)的分发给UIView,一个应用基本上只有一个UIwindow</li>
+<li>UIView和CAlayer的老祖宗都是NSObject,可见UIResponder是用来响应事件的,也就是UIView可以响应用户事件<br>CALayer 和 UIView 的区别</li>
+<li>UIView的继承结构为:UIResponder:NSObject</li>
+<li>CALayer的继承结构为:NSObject,可见,UIResponder是用来响应事件的,也就是UIView可以响应用户事件,CALayer直接从NSObject继承,因为缺少了UIResponder类,不能响应任何用户事件</li>
+<li>所属框架:UIView是在UIKit.framework中定义的.UIKit主要是用来构建用户界面,并且是可以响应时间的,CALayer是在QuartCore.framework定义的.而且CALayer作为一个低级的,可以承载绘制内容的底层对象出现在该框架中.</li>
+<li>UIView相比CAlayer最大的区别是UIView可以响应用户事件,而CALayer不可以,UIView侧重于对像是内容的管理,CALayer侧重于对内容的绘制,UIView是基于CALayer的高层封装</li>
+<li>相似支持: 1.相似的树形结构<pre><code>2.显示内容绘制方式
+3.布局约束
+</code></pre></li>
+<li>总结一下就是: UIView是用来显示内容的,可以处理用户时间,CALayer是用来绘制内容的,对内容进行动画处理依赖与UIView来进行展示,不能处理用户事件<br>为啥有两套体系?<br>并不是两套体系UIView和CALayer是相互依赖关系,UIView依赖于CALayer提供的内容,CALayer依赖UIView提供的容器来显示绘制的内容.归根结底,CALayer是这一切的基础,如果没有CALayer,UIView自身也不会存在,UIView是一个特殊的CALayer实现.添加了响应事件的能力UIView本身,更像是一个CALayer的管理器,访问他的跟绘图和坐标有关的属性,例如frame,bounds等等,实际上内部都是在访问他所包含的CALayer的相关属性</li>
+<li>UIView的layer树形在系统内部,被系统维护这三份copy<br>第一份,逻辑树,就是代码里可以操纵的,例如更改layer的属性等等就在这一份<br>第二份,动画树.这是一个中间层,系统正在这一层上更改属性,进行各种渲染操作<br>第三份,显示树,这棵树的内容是当前正被显示在屏幕上的内容.<br>这三棵树的逻辑结都是一样的,区别只有各自的属性</li>
+</ul>
+<p>UIView的主layer以外,对它的sublayer,也就是layer的属性进行更改,系统将自动进行动画生成<br>CALayer的坐标系系统和UIView有点不一样,他多了一个叫anchorPoint的属性,它使用CGPoint结构,但是值域是0~1,也就是按照比例来设置,这个点是各种图形变换的坐标原点,同事会更改layer的posititon的位置,它的缺省值是{0.5, .0.5}, 也就是在layer的中央<br>(一脸懵逼的一道题….)</p>
+<h2 id="21-property都有哪些常见的字段"><a href="#21-property都有哪些常见的字段" class="headerlink" title="21.property都有哪些常见的字段?"></a>21.property都有哪些常见的字段?</h2><ul>
+<li>strong</li>
+<li>wek</li>
+<li>assgin</li>
+<li>copy</li>
+<li>nomatic</li>
+<li>readonly</li>
+</ul>
+<h2 id="22-strong-wek-assgin-copy-nomatic-readonly等的区别"><a href="#22-strong-wek-assgin-copy-nomatic-readonly等的区别" class="headerlink" title="22. strong, wek, assgin, copy, nomatic, readonly等的区别"></a>22. strong, wek, assgin, copy, nomatic, readonly等的区别</h2><ul>
+<li>assign: 简单赋值,不更改索引计数对基础数据类</li>
+<li>copy 简历一个索引计数为1的对象,然后释放旧对象,对NSString</li>
+<li>retain: 释放旧的对象,将旧对象的值赋予输入对象,再提高输入对象的索引计数为1,对其他NSOBject和其子类</li>
+<li>weak 和 strong的区别: weak和strong不同的是,当一个对象不再有strong类型的指针指向它的时候,他会被释放,即使还有weak型指针指向它,一旦最后一个strong型指针离去,这个对象将被释放,所有剩余的weak型指正都将被清楚</li>
+<li>copy 于 retain:<br>1.copy其实是建立了一个相同的对象,而retain不是<br>2.copy是内容拷贝,retain是指针拷贝.<br>3.copy是内容拷贝,对于像NSString的确是这样,如果拷贝的是NSArray,这时只是copy了指向array中相对应元素的指针,这边是所谓的潜复制<br>atomic是Objc使用的一种线程保护技术,基本上来讲,是防止在写未完成的时候被另外一个线程读取,造成数据错误,而这种机制是号位系统资源的,所以在iPhone这种小型设备上,如果没有使用多线程间的通讯编程,那么nomatin是一个非常好的选择.</li>
+</ul>
 
       
     </div>
@@ -403,7 +434,7 @@
         <p><span>本文标题:</span><a href="/2016/10/18/iOS面试题/">iOS面试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SUn</a></p>
         <p><span>发布时间:</span>2016-10-18, 16:58:40</p>
-        <p><span>最后更新:</span>2016-10-29, 16:07:36</p>
+        <p><span>最后更新:</span>2016-11-02, 09:52:45</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/18/iOS面试题/" title="iOS面试题">http://yoursite.com/2016/10/18/iOS面试题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/18/iOS面试题/　　作者: SUn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -439,7 +470,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从网上搜集的各种iOS面试题-会持续更新的"><span class="toc-number">1.</span> <span class="toc-text">从网上搜集的各种iOS面试题..会持续更新的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简述OC中的内存管理机制"><span class="toc-number"></span> <span class="toc-text">1.简述OC中的内存管理机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用"><span class="toc-number"></span> <span class="toc-text">2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-提升UITableView性能的几点建议"><span class="toc-number"></span> <span class="toc-text">3.提升UITableView性能的几点建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-线程同步和异步的区别"><span class="toc-number"></span> <span class="toc-text">4. 线程同步和异步的区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-堆和栈的区别"><span class="toc-number"></span> <span class="toc-text">5,堆和栈的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-iOS类是否可以多继承"><span class="toc-number"></span> <span class="toc-text">6.iOS类是否可以多继承?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储"><span class="toc-number"></span> <span class="toc-text">7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-iOS的动态性"><span class="toc-number"></span> <span class="toc-text">8.iOS的动态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-什么是安全释放"><span class="toc-number"></span> <span class="toc-text">9.什么是安全释放?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-RunLoop是什么"><span class="toc-number"></span> <span class="toc-text">10.RunLoop是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个"><span class="toc-number"></span> <span class="toc-text">11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期"><span class="toc-number"></span> <span class="toc-text">12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作"><span class="toc-number"></span> <span class="toc-text">13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-简单说一下APP的启动过程"><span class="toc-number"></span> <span class="toc-text">14.简单说一下APP的启动过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-引用程序的代理方法有哪些"><span class="toc-number"></span> <span class="toc-text">15.引用程序的代理方法有哪些?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-事件处理-如何寻找最合适的view"><span class="toc-number"></span> <span class="toc-text">17.事件处理,如何寻找最合适的view?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-事件的响应"><span class="toc-number"></span> <span class="toc-text">18.事件的响应:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-事件传递的完整过程"><span class="toc-number"></span> <span class="toc-text">19.事件传递的完整过程</span></a>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从网上搜集的各种iOS面试题-会持续更新的"><span class="toc-number">1.</span> <span class="toc-text">从网上搜集的各种iOS面试题..会持续更新的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简述OC中的内存管理机制"><span class="toc-number"></span> <span class="toc-text">1.简述OC中的内存管理机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-readwrite-readonly-assign-retain-copy-nonatomic-atomic-strong-weak属性的作用"><span class="toc-number"></span> <span class="toc-text">2.readwrite,readonly,assign,retain,copy,nonatomic,atomic,strong,weak属性的作用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-提升UITableView性能的几点建议"><span class="toc-number"></span> <span class="toc-text">3.提升UITableView性能的几点建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-线程同步和异步的区别"><span class="toc-number"></span> <span class="toc-text">4. 线程同步和异步的区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-堆和栈的区别"><span class="toc-number"></span> <span class="toc-text">5,堆和栈的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-iOS类是否可以多继承"><span class="toc-number"></span> <span class="toc-text">6.iOS类是否可以多继承?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-iOS本地存储都有哪几种方式-iOS如何实现复杂对象的存储"><span class="toc-number"></span> <span class="toc-text">7.iOS本地存储都有哪几种方式?iOS如何实现复杂对象的存储?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-iOS的动态性"><span class="toc-number"></span> <span class="toc-text">8.iOS的动态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-什么是安全释放"><span class="toc-number"></span> <span class="toc-text">9.什么是安全释放?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-RunLoop是什么"><span class="toc-number"></span> <span class="toc-text">10.RunLoop是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-写一个标准宏MIN-这个宏输入两个参数并返回较小的一个"><span class="toc-number"></span> <span class="toc-text">11.写一个标准宏MIN,这个宏输入两个参数并返回较小的一个?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-简述应用程序按Home键进入后台时的生命周期-以及从后台回到前台时的生命周期"><span class="toc-number"></span> <span class="toc-text">12.简述应用程序按Home键进入后台时的生命周期,以及从后台回到前台时的生命周期?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-ViewController的loadView-viewDidLoad-viewWillAppear-dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作"><span class="toc-number"></span> <span class="toc-text">13.ViewController的loadView, viewDidLoad,viewWillAppear,dealloc、init分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-简单说一下APP的启动过程"><span class="toc-number"></span> <span class="toc-text">14.简单说一下APP的启动过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-引用程序的代理方法有哪些"><span class="toc-number"></span> <span class="toc-text">15.引用程序的代理方法有哪些?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-事件处理-如何寻找最合适的view"><span class="toc-number"></span> <span class="toc-text">17.事件处理,如何寻找最合适的view?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-事件的响应"><span class="toc-number"></span> <span class="toc-text">18.事件的响应:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-事件传递的完整过程"><span class="toc-number"></span> <span class="toc-text">19.事件传递的完整过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-UIWindow和UIView和-CALayer-的联系和区别"><span class="toc-number"></span> <span class="toc-text">20.UIWindow和UIView和 CALayer 的联系和区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-property都有哪些常见的字段"><span class="toc-number"></span> <span class="toc-text">21.property都有哪些常见的字段?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-strong-wek-assgin-copy-nomatic-readonly等的区别"><span class="toc-number"></span> <span class="toc-text">22. strong, wek, assgin, copy, nomatic, readonly等的区别</span></a>
         
     </div>
     <style>
