@@ -176,16 +176,14 @@
 <li>CALayer的继承结构为:NSObject,可见,UIResponder是用来响应事件的,也就是UIView可以响应用户事件,CALayer直接从NSObject继承,因为缺少了UIResponder类,不能响应任何用户事件</li>
 <li>所属框架:UIView是在UIKit.framework中定义的.UIKit主要是用来构建用户界面,并且是可以响应时间的,CALayer是在QuartCore.framework定义的.而且CALayer作为一个低级的,可以承载绘制内容的底层对象出现在该框架中.</li>
 <li>UIView相比CAlayer最大的区别是UIView可以响应用户事件,而CALayer不可以,UIView侧重于对像是内容的管理,CALayer侧重于对内容的绘制,UIView是基于CALayer的高层封装</li>
-<li>相似支持: 1.相似的树形结构<pre><code>2.显示内容绘制方式
-3.布局约束
-</code></pre></li>
+<li>相似支持:<br>1.相似的树形<br>2.显示内容绘制方式<br>3.布局约束</li>
 <li>总结一下就是: UIView是用来显示内容的,可以处理用户时间,CALayer是用来绘制内容的,对内容进行动画处理依赖与UIView来进行展示,不能处理用户事件<br>为啥有两套体系?<br>并不是两套体系UIView和CALayer是相互依赖关系,UIView依赖于CALayer提供的内容,CALayer依赖UIView提供的容器来显示绘制的内容.归根结底,CALayer是这一切的基础,如果没有CALayer,UIView自身也不会存在,UIView是一个特殊的CALayer实现.添加了响应事件的能力UIView本身,更像是一个CALayer的管理器,访问他的跟绘图和坐标有关的属性,例如frame,bounds等等,实际上内部都是在访问他所包含的CALayer的相关属性</li>
 <li>UIView的layer树形在系统内部,被系统维护这三份copy<br>第一份,逻辑树,就是代码里可以操纵的,例如更改layer的属性等等就在这一份<br>第二份,动画树.这是一个中间层,系统正在这一层上更改属性,进行各种渲染操作<br>第三份,显示树,这棵树的内容是当前正被显示在屏幕上的内容.<br>这三棵树的逻辑结都是一样的,区别只有各自的属性</li>
 </ul>
 <p>UIView的主layer以外,对它的sublayer,也就是layer的属性进行更改,系统将自动进行动画生成<br>CALayer的坐标系系统和UIView有点不一样,他多了一个叫anchorPoint的属性,它使用CGPoint结构,但是值域是0~1,也就是按照比例来设置,这个点是各种图形变换的坐标原点,同事会更改layer的posititon的位置,它的缺省值是{0.5, .0.5}, 也就是在layer的中央<br>(一脸懵逼的一道题….)</p>
 <h2 id="21-property都有哪些常见的字段"><a href="#21-property都有哪些常见的字段" class="headerlink" title="21.property都有哪些常见的字段?"></a>21.property都有哪些常见的字段?</h2><ul>
 <li>strong</li>
-<li>wek</li>
+<li>weak</li>
 <li>assgin</li>
 <li>copy</li>
 <li>nomatic</li>
