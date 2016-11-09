@@ -15,24 +15,15 @@
 
 
 
-<meta name="description" content="init- 初始化对象 
-viewDidLoad- 加载视图完毕
-viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS视图控制对象生命周期">
-<meta property="og:url" content="http://yoursite.com/2016/10/27/iOS视图控制对象生命周期/index.html">
+<meta name="description" content="SUn的技术博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SUn的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2016/11/index.html">
 <meta property="og:site_name" content="SUn的博客">
-<meta property="og:description" content="init- 初始化对象 
-viewDidLoad- 加载视图完毕
-viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)">
-<meta property="og:image" content="http://yoursite.com/2016/10/27/iOS视图控制对象生命周期/1.gif">
-<meta property="og:updated_time" content="2016-10-29T08:06:55.000Z">
+<meta property="og:description" content="SUn的技术博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS视图控制对象生命周期">
-<meta name="twitter:description" content="init- 初始化对象 
-viewDidLoad- 加载视图完毕
-viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)">
-<meta name="twitter:image" content="http://yoursite.com/2016/10/27/iOS视图控制对象生命周期/1.gif">
+<meta name="twitter:title" content="SUn的博客">
+<meta name="twitter:description" content="SUn的技术博客">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -64,7 +55,7 @@ viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(�
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>iOS视图控制对象生命周期 | SUn的博客</title>
+<title>Archives: 2016/11 | SUn的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -74,8 +65,8 @@ viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(�
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -265,220 +256,81 @@ viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(�
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-iOS视图控制对象生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2016/10/27/iOS视图控制对象生命周期/" class="article-date">
-      <time datetime="2016-10-27T00:15:08.000Z" itemprop="datePublished">2016-10-27</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/11/04/Swift学习笔记/" class="archive-article-date">
+      <time datetime="2016-11-04T13:58:50.000Z" itemprop="datePublished">11-04</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      iOS视图控制对象生命周期
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>init- 初始化对象 </p>
-<p>viewDidLoad- 加载视图完毕</p>
-<p>viewWillAppear- UIViewController对象的视图即将加入到窗口时调用(即将显示)</p>
-<a id="more"></a>
-<p>viewDidAppear- UIViewController对象的视图已经加入到窗口上(完成显示时调用)</p>
-<p>viewWillDisAppear- UIViewController对象的视图即将消失,被覆盖或是隐藏时调用</p>
-<p>viewDidDisAppear- UIViewController对象的视图已经消失,被覆盖或是隐藏时调用</p>
-<p>dealloc- 对象被销毁时调用</p>
-<h3 id="下面先来看实例图片"><a href="#下面先来看实例图片" class="headerlink" title="下面先来看实例图片."></a>下面先来看实例图片.</h3><p><img src="/2016/10/27/iOS视图控制对象生命周期/1.gif" alt="gif"></p>
-<p>这张gif的大致内容是这样的:</p>
-<ul>
-<li>在一个TabBarController里面有两个子控制器</li>
-<li>两个控制器分别在这些方法调用的时候打印输出</li>
-<li>当程序一启动的时候,会将两个控制器addChildViewController,并且将第一个childViewController的view添加到TabBarController显示View的View伤,所以one.view会打印viewDidLoad方法,</li>
-<li>当点击TabBar,会显示two.view,而one.view会移除视野,所以<code>[sunTwo viewDidLoad]</code>,<code>[sunTwo viewWillAppear:]</code>,<code>[sunOne viewWillDisappear:]</code>,<code>[sunOne viewDidDisappear:]</code>,<code>[sunTwo viewDidAppear:]</code>会依次打印</li>
-</ul>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/27/iOS视图控制对象生命周期/">iOS视图控制对象生命周期</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">SUn</a></p>
-        <p><span>发布时间:</span>2016-10-27, 08:15:08</p>
-        <p><span>最后更新:</span>2016-10-29, 16:06:55</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/27/iOS视图控制对象生命周期/" title="iOS视图控制对象生命周期">http://yoursite.com/2016/10/27/iOS视图控制对象生命周期/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/27/iOS视图控制对象生命周期/　　作者: SUn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/10/27/PCH文件使用指南/">
-                    PCH文件使用指南
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/10/20/mac下cocoapods完全使用教程/">
-                    mac下cocoapods完全使用教程
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面先来看实例图片"><span class="toc-number">1.</span> <span class="toc-text">下面先来看实例图片.</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+          
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"iOS视图控制对象生命周期　| SUn的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/11/04/iOS10和Swift3-0那些事总结/" class="archive-article-date">
+      <time datetime="2016-11-04T13:33:38.000Z" itemprop="datePublished">11-04</time>
+</a>
+
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/11/04/iOS10和Swift3-0那些事总结/">iOS10和Swift3.0那些事总结</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
     
 
-    
-</div>
-
-
-
-
-
-
-
-    
-        <section class="youyan" id="comments">
-    <script>
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2117884';
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-    
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
-
-    <div id="uyan_frame"></div>
-</section>
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2016/10/27/PCH文件使用指南/" title="上一篇: PCH文件使用指南">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2016/10/20/mac下cocoapods完全使用教程/" title="下一篇: mac下cocoapods完全使用教程">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/iOS10和Swift3-0那些事总结/">iOS10和Swift3.0那些事总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/PCH文件使用指南/">PCH文件使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/iOS视图控制对象生命周期/">iOS视图控制对象生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/20/mac下cocoapods完全使用教程/">mac下cocoapods完全使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/18/iOS面试题/">iOS面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/Mac搭建Hexo博客/">Mac搭建Hexo博客</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
