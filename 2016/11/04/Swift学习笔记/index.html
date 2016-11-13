@@ -15,16 +15,22 @@
 
 
 
-<meta name="description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为varSwift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
+<meta name="description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改
+Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为var
+Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/11/04/Swift学习笔记/index.html">
 <meta property="og:site_name" content="SUn的博客">
-<meta property="og:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为varSwift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
-<meta property="og:updated_time" content="2016-11-09T03:29:55.000Z">
+<meta property="og:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改
+Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为var
+Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
+<meta property="og:updated_time" content="2016-11-13T04:45:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习笔记">
-<meta name="twitter:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为varSwift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
+<meta name="twitter:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改
+Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为var
+Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -293,9 +299,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h3><p>Swift中 <code>let</code>定义常量,一经赋值不允许再修改<code>var</code>是变量,赋值之后仍然可以修改<br>Swift中 变量的声明用<code>var</code>常量的声明用<code>let</code>一般情况下都用<code>let</code>声明, 当需要重复赋值的时候再将<code>let</code>改为<code>var</code><br>Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:<code>let a = 30</code> 那么 a的类型就是<code>Int</code>型</p>
+        <h3 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h3><p>Swift中 <code>let</code>定义常量,一经赋值不允许再修改<code>var</code>是变量,赋值之后仍然可以修改</p>
+<p>Swift中 变量的声明用<code>var</code>常量的声明用<code>let</code>一般情况下都用<code>let</code>声明, 当需要重复赋值的时候再将<code>let</code>改为<code>var</code></p>
+<p>Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:<code>let a = 30</code> 那么 a的类型就是<code>Int</code>型</p>
 <a id="more"></a>
-<p>Swift中 任何不同类型的数据之间,不能直接进行运算,<code>let x = 10</code>,<code>let y = 10.5</code>这两个常量就不能一起运算,系统不会隐式类型转换,需要程序员强制类型转换<code>print(x + Int(y))</code><br>Swift中 如果需要指定变量/常量的值,可以直接使用<code>let 变量名 : 类型 = 值</code>的方式<code>let a: int = 10</code>,在Swift中,很少使用直接指定类型,通常都是自动推到<br>Swift中 每句话的后面是不用加<code>;</code>的,如果一行中有多条语句,用<code>,</code>隔开<br>Swift中 执行一个方法直接调用方法名()<code>demo()</code>, <code>demo1()</code>, <code>demo2</code>,<br>Swift对代码进行了简化,<code>view.background = [UIColor redColor]</code>优化之后变为<code>view.background = UIColor.red()</code>这里的小括号的意思是执行代码<br>Swift中 方法的声明为 func 方法名(形参列表) -&gt; 返回值{}<br>Swift中 可选项: (optional)可能有值,可能没值<code>let x:Optional = 10;</code>,<code>print(x)</code>输出结果为<code>Optional(10)</code>开发中一般都用<code>?</code>替换<br><code>let y :Int? = 10</code>,用来定义y是一个可选的,Int类型,可能没有值,也可能只有一个整数<br>Swift中 <code>!</code> 强行解包 – <code>从可选值中强行获取对应的非空值,如果真的是nil,系统就会崩溃</code>.崩溃信息:<code>unexpectedly found nil while unwrapping an Optional value</code>意思是:在解包的时候发现了nil值.我们必须为每一个<code>!</code>负责.<code>可选项在参与运算之前必须进行解包,因为nil不能参与运算!</code><br>Swift中 <code>?</code>用于定义 <code>!</code>用于解包,计算前<br>Swift中 <code>var</code>的可选默认值为nil,<code>let</code>的可选默认值没有默认值<br>Swift中 类型转换用<code>as</code>,<code>值 as 类型</code>,<code>相当于OC中(XXXTableViewController *)[]</code><br>Swift中:</p>
+<p>Swift中 任何不同类型的数据之间,不能直接进行运算,<code>let x = 10</code>,<code>let y = 10.5</code>这两个常量就不能一起运算,系统不会隐式类型转换,需要程序员强制类型转换<code>print(x + Int(y))</code> </p>
+<p>Swift中 如果需要指定变量/常量的值,可以直接使用<code>let 变量名 : 类型 = 值</code>的方式<code>let a: int = 10</code>,在Swift中,很少使用直接指定类型,通常都是自动推到</p>
+<p>Swift中 每句话的后面是不用加<code>;</code>的,如果一行中有多条语句,用<code>,</code>隔开</p>
+<p>Swift中 执行一个方法直接调用方法名()<code>demo()</code>, <code>demo1()</code>, <code>demo2</code>,</p>
+<p>Swift对代码进行了简化,<code>view.background = [UIColor redColor]</code>优化之后变为<code>view.background = UIColor.red()</code>这里的小括号的意思是执行代码 </p>
+<p>Swift中 方法的声明为 func 方法名(形参列表) -&gt; 返回值{}</p>
+<p>Swift中 可选项: (optional)可能有值,可能没值<code>let x:Optional = 10;</code>,<code>print(x)</code>输出结果为<code>Optional(10)</code>开发中一般都用<code>?</code>替换</p>
+<p><code>let y :Int? = 10</code>,用来定义y是一个可选的,Int类型,可能没有值,也可能只有一个整数</p>
+<p>Swift中 <code>!</code> 强行解包 – <code>从可选值中强行获取对应的非空值,如果真的是nil,系统就会崩溃</code>.崩溃信息:<code>unexpectedly found nil while unwrapping an Optional value</code>意思是:在解包的时候发现了nil值.我们必须为每一个<code>!</code>负责.<code>可选项在参与运算之前必须进行解包,因为nil不能参与运算!</code></p>
+<p>Swift中 <code>?</code>用于定义 <code>!</code>用于解包,计算前 </p>
+<p>Swift中 <code>var</code>的可选默认值为nil,<code>let</code>的可选默认值没有默认值</p>
+<p>Swift中 类型转换用<code>as</code>,<code>值 as 类型</code>,<code>相当于OC中(XXXTableViewController *)[tableview dequeue...]</code><br>Swift中:</p>
 <ul>
 <li><p>字符串长度:返回指定编码的对应的字节数量</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let str = &quot;hello world&quot;          </div><div class="line">print(str.lengthOfBytes(using: .utf8))</div><div class="line">输出结果: 11</div></pre></td></tr></table></figure>
@@ -303,10 +322,37 @@
 <li><p>字符串长度:返回字符的个数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(str.characters.count) </div><div class="line">输出结果 : 13</div></pre></td></tr></table></figure>
 </li>
-<li><p>使用NSString中转<br>-字符串的拼接: </p>
+<li><p>使用NSString中转: </p>
+</li>
+<li><p>字符串的拼接: </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let name = &quot;老王&quot;</div><div class="line">let age = 18 - let str = &quot;\(name) \(age)&quot;               </div><div class="line">print(str)</div><div class="line">输出结果: 老王18</div></pre></td></tr></table></figure>
 </li>
+<li><p>字符串的子串:一般使用NSString作为中转,因为Swift取子串的方法一直在优化</p>
+</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// NSString</div><div class="line">let str = &quot;今天天气真好&quot;</div><div class="line">let ocStr = str as NSString</div><div class="line">let s1 = ocStr.substring(with: NSMakeRange(2, 3))</div><div class="line">print(s1)</div><div class="line">输出结果:天气真</div><div class="line"></div><div class="line">// String 的3.0方法</div><div class="line">let s2 = str.substring(from: &quot;今天&quot;.endIndex)</div><div class="line">print(s2)</div><div class="line">输出结果: 天气真好</div></pre></td></tr></table></figure>
+<p>Swift中 数组的定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 这里因为类型推倒的原因数组a的类型是String</div><div class="line">let a = [&quot;小明&quot;, &quot;小红&quot;, &quot;小芳&quot;]</div><div class="line">// 这里因为类型推到的原因,数组b的类型是Int</div><div class="line">let b = [1, 2, 3]</div><div class="line">// 数组中可以混合类型,但是应用场景并不多</div><div class="line">// 结构体混合需要包装结构体</div></pre></td></tr></table></figure></p>
+<p>Swift中 数组的定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let a1:[String] = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</div><div class="line">let a2:[Any] = [&quot;1&quot;, &quot;2&quot;, 3, UITableView()]</div><div class="line">let a3:NSArray =  [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, UILabel()]</div><div class="line">let a4:NSMutableArray =  [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;</div></pre></td></tr></table></figure>
+<p>Swift中 遍历数组的几种方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">// 数组的遍历</div><div class="line">func demo7()  &#123;</div><div class="line">let a = [&quot;小明&quot;, &quot;小红&quot;, &quot;小芳&quot;];</div><div class="line"></div><div class="line">// 第一种遍历 :  按照下标遍历</div><div class="line">for temp in 0..&lt;a.count &#123;</div><div class="line">print(a[temp])</div><div class="line">&#125;</div><div class="line">print(&quot;我是分割线------&quot;)</div><div class="line"></div><div class="line">// 第二种遍历: for in 遍历</div><div class="line">for temp in a &#123;</div><div class="line">print(temp)</div><div class="line">&#125;</div><div class="line">print(&quot;我是分割线------&quot;)</div><div class="line"></div><div class="line">// 第三种遍历: 同时遍历下标和元素</div><div class="line">for temp in a.enumerated() &#123;</div><div class="line">print(temp.offset, temp.element)</div><div class="line">&#125;</div><div class="line">print(&quot;我是分割线------&quot;)</div><div class="line"></div><div class="line">// 第四种遍历: 遍历下标和内容</div><div class="line">for (a, a1) in a.enumerated() &#123;</div><div class="line">print(a1, a)</div><div class="line">&#125;</div><div class="line">print(&quot;我是分割线------&quot;)</div><div class="line"></div><div class="line">// 第五种遍历: 反序遍历</div><div class="line">for temp in a.reversed() &#123;</div><div class="line">print(temp)</div><div class="line">&#125;</div><div class="line">print(&quot;我是分割线------&quot;)</div><div class="line"></div><div class="line">// 第六种遍历: 反序遍历下标 元素</div><div class="line">// 这种是错误的遍历 这种是元素反转,下标不反转</div><div class="line">for temp in a.reversed().enumerated() &#123;</div><div class="line">print(temp)</div><div class="line">&#125;</div><div class="line">//</div><div class="line">for temp in a.enumerated().reversed() &#123;</div><div class="line">print(temp)</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Swift中 数组的增/删/改</p>
+<ul>
+<li>数组元素的添加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</div><div class="line"></div><div class="line">a.append(&quot;老张&quot;)    // 添加元素,默认添加到末尾</div><div class="line"></div><div class="line">a.insert(&quot;0&quot;, at: 0)    // 插入元素,按照指定的位置插入</div></pre></td></tr></table></figure>
+<ul>
+<li>数组元素的删除</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a.remove(at: 0)    // 指定删除元素</div><div class="line"></div><div class="line">a.removeLast(2)    // 删除从后数开始2个元素</div><div class="line"></div><div class="line">// 删除最后一个/第一个</div><div class="line">a.removeFirst()</div><div class="line">a.removeLast()</div><div class="line"></div><div class="line">a.removeAll(keepingCapacity: true)    // 删除全部元素,并保留空间</div><div class="line"></div><div class="line">a.removeAll()     // 删除所有</div></pre></td></tr></table></figure>
+<ul>
+<li>数组元素的修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a[0] = &quot;老王&quot;   // 通过下标修改元素</div><div class="line">// 将数组2~3的范围用指定数组替代</div><div class="line">a[2...3] = [&quot;呵呵&quot;, &quot;哈哈&quot;, &quot;嘿嘿&quot;, &quot;嘻嘻&quot;, &quot;呼呼&quot;, &quot;...&quot;]</div></pre></td></tr></table></figure>
+<p>Swift中 数组的合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = [2&quot;2&quot;,&quot;3&quot;] as [Any]</div><div class="line">let b: [Any] = [&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]</div><div class="line"></div><div class="line">a += b</div><div class="line">print(a)</div><div class="line"></div><div class="line">输出结果: [2, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;]</div></pre></td></tr></table></figure></p>
+<p>Swift中 字典的定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// [key : value]</div><div class="line">let dict = [&quot;name&quot; : &quot;laowang&quot;]</div><div class="line"></div><div class="line">// 定义字典的数组</div><div class="line">let a: [Dictionary&lt;String, Any&gt;] = [</div><div class="line">[&quot;name&quot; : &quot;laowang&quot;, &quot;age&quot; : 18],</div><div class="line">[&quot;name&quot; : &quot;laozhang&quot;, &quot;age&quot; : 20</div><div class="line">]</div><div class="line"></div><div class="line">let dict: [String : Any] = [&quot;name&quot; : &quot;laowang&quot;, &quot;age&quot; : 19]</div></pre></td></tr></table></figure></p>
+<p>Swift中 字典的增删改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dict[&quot;height&quot;] = 20    // 如果KEY存在 就是修改,如果KEY不存在就是新增</div></pre></td></tr></table></figure></p>
+<p>Swift中 字典的合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var dict1: [String : Any] = [&quot;name&quot; : &quot;laowang&quot;, &quot;height&quot; : 18, &quot;title&quot; : &quot;hehe&quot;]</div><div class="line">let dict2: [String : Any] = [&quot;name&quot; : 18, &quot;love&quot; : &quot;love&quot;]</div><div class="line"></div><div class="line">for temp in dict2 &#123;</div><div class="line">dict1[temp.key] = temp.value</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 如果KEY存在则替换,如果KEY不存在则新增</div><div class="line"></div><div class="line">输出结果: [&quot;name&quot;: 18, &quot;height&quot;: 18, &quot;title&quot;: &quot;hehe&quot;, &quot;love&quot;: &quot;love&quot;]</div></pre></td></tr></table></figure></p>
+<p>Swift中 字典的遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let dict: [String : Any] = [&quot;name&quot; : &quot;laowang&quot;, &quot;age&quot; : 18]</div><div class="line"></div><div class="line">for temp in dict &#123;</div><div class="line">print(temp)</div><div class="line">print(temp.value, temp.key)</div><div class="line">print(&quot;\(temp.key) --- \(temp.value)&quot;)</div><div class="line">&#125;</div><div class="line">for (key, value) in dict &#123;</div><div class="line">print(key, value)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3>
       
@@ -319,7 +365,7 @@
         <p><span>本文标题:</span><a href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SUn</a></p>
         <p><span>发布时间:</span>2016-11-04, 21:58:50</p>
-        <p><span>最后更新:</span>2016-11-09, 11:29:55</p>
+        <p><span>最后更新:</span>2016-11-13, 12:45:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/04/Swift学习笔记/" title="Swift学习笔记">http://yoursite.com/2016/11/04/Swift学习笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/04/Swift学习笔记/　　作者: SUn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -333,6 +379,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/11/12/Swift面试题/">
+                    Swift面试题
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -442,7 +494,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/11/12/Swift面试题/" title="上一篇: Swift面试题">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -454,7 +508,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/iOS10和Swift3-0那些事总结/">iOS10和Swift3.0那些事总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/PCH文件使用指南/">PCH文件使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/iOS视图控制对象生命周期/">iOS视图控制对象生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/20/mac下cocoapods完全使用教程/">mac下cocoapods完全使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/18/iOS面试题/">iOS面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/Mac搭建Hexo博客/">Mac搭建Hexo博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/Swift面试题/">Swift面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/04/iOS10和Swift3-0那些事总结/">iOS10和Swift3.0那些事总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/PCH文件使用指南/">PCH文件使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/iOS视图控制对象生命周期/">iOS视图控制对象生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/20/mac下cocoapods完全使用教程/">mac下cocoapods完全使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/18/iOS面试题/">iOS面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/Mac搭建Hexo博客/">Mac搭建Hexo博客</a></li></ul>
 
 
 
