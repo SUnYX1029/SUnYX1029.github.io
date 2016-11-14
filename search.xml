@@ -67,7 +67,50 @@
 <p>Swift中 字典的合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var dict1: [String : Any] = [&quot;name&quot; : &quot;laowang&quot;, &quot;height&quot; : 18, &quot;title&quot; : &quot;hehe&quot;]</div><div class="line">let dict2: [String : Any] = [&quot;name&quot; : 18, &quot;love&quot; : &quot;love&quot;]</div><div class="line"></div><div class="line">for temp in dict2 &#123;</div><div class="line">dict1[temp.key] = temp.value</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 如果KEY存在则替换,如果KEY不存在则新增</div><div class="line"></div><div class="line">输出结果: [&quot;name&quot;: 18, &quot;height&quot;: 18, &quot;title&quot;: &quot;hehe&quot;, &quot;love&quot;: &quot;love&quot;]</div></pre></td></tr></table></figure></p>
 <p>Swift中 字典的遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let dict: [String : Any] = [&quot;name&quot; : &quot;laowang&quot;, &quot;age&quot; : 18]</div><div class="line"></div><div class="line">for temp in dict &#123;</div><div class="line">print(temp)</div><div class="line">print(temp.value, temp.key)</div><div class="line">print(&quot;\(temp.key) --- \(temp.value)&quot;)</div><div class="line">&#125;</div><div class="line">for (key, value) in dict &#123;</div><div class="line">print(key, value)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3>]]></content>
+<h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li><p>Swift中 函数的定义格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func(形参1 ,形参2 ) -&gt; 返回值&#123;代码块&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Swift中 各个版本之间的调用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">func(X: Int, Y: Int)&#123;&#125;</div><div class="line">Swift1.0: fun(10, 20)    // 所有形参都会省略</div><div class="line">Swift2.0: fun(10, Y: 20)    // 第一个形参省略</div><div class="line">Swift3.0: fun(x: 10, Y: 20) // 所有形参都不省略</div></pre></td></tr></table></figure>
+</li>
+<li><p>外部参数:给每个形参起一个别名,提高可读性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fun(num1 X: Int, num2 Y:Int)&#123;&#125;</div><div class="line">调用时: fun(num1: 10, num2: 20)</div></pre></td></tr></table></figure>
+</li>
+<li><p>外部参数如果使用<code>_</code>, 在调用时会忽略参数名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fun(_ X: Int, _ Y: Int)&#123;&#125;</div><div class="line">调用时:fun(10, 20)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Swift中 <code>_</code>就是可以忽略必须用但是不需要的地方比如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">for i in 0..&lt;10&#123;</div><div class="line">print(&quot;呵呵&quot;)</div><div class="line">&#125;</div><div class="line">输出结果会打印10次呵呵,但是i并没有用到,所以我们可以把i替换为_</div><div class="line">for _ in 0..&lt;10&#123;</div><div class="line">print(&quot;呵呵&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>默认值(OC不具备的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">fun(X: Int = 10, Y: Int = 20) -&gt; Int&#123;</div><div class="line">return X + Y</div><div class="line">&#125;</div><div class="line">调用时: </div><div class="line">1.fun()</div><div class="line">2.fun(X: 10, Y: 21)</div><div class="line">输出结果:</div><div class="line">print(fun())</div><div class="line">结果: 30</div><div class="line">print(fun(X: Int, Y: Int))</div><div class="line">结果: 31</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>结论:<br>当我们调用有默认值的函数时,如果不给函数的参数赋值,那么函数就会使用默认的值运算;如果给参数赋值<br>那么函数就会使用赋值后的值运算而不会使用默认值;如果不给第一个参数赋值,那么函数就会用第一个参数<br>的默认值与第二个参数运算;如果不给第二个参数赋值,那么函数就会用第一个参数的值与第二个参数的默认<br>值进行运算</p>
+<p>一句话概括: 通过给参数设置默认值,在调用的时候,可以任意组合参数,如果有不指定的参数,则使用该参数的默认值运算</p>
+<ul>
+<li>Swift中 函数无返回值的三种情况: 主要用在闭包,在阅读第三框架代码时保证能看懂<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun()&#123;&#125;</div><div class="line">fun() -&gt; ()&#123;&#125;    // 最标准的写法  </div><div class="line">fun() -&gt; Void&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">fun()</th>
+<th style="text-align:center">-&gt;</th>
+<th style="text-align:center">{}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">前面执行</td>
+<td style="text-align:center">输出</td>
+<td style="text-align:center">目标</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
     </entry>
     
     <entry>
