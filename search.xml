@@ -113,6 +113,7 @@
 </tr>
 </tbody>
 </table>
+<h4 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
