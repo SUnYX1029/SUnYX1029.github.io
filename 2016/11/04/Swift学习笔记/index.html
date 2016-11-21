@@ -25,7 +25,7 @@ Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出
 <meta property="og:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改
 Swift中 变量的声明用var常量的声明用let一般情况下都用let声明, 当需要重复赋值的时候再将let改为var
 Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出来前面变量的类型:let a = 30 那么 a的类型就是Int型">
-<meta property="og:updated_time" content="2016-11-21T08:16:46.000Z">
+<meta property="og:updated_time" content="2016-11-21T08:18:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习笔记">
 <meta name="twitter:description" content="第一天Swift中 let定义常量,一经赋值不允许再修改var是变量,赋值之后仍然可以修改
@@ -316,21 +316,13 @@ Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出
 <p>Swift中 <code>var</code>的可选默认值为nil,<code>let</code>的可选默认值没有默认值</p>
 <p>Swift中 类型转换用<code>as</code>,<code>值 as 类型</code>,<code>相当于OC中(XXXTableViewController *)[tableview dequeue...]</code><br>Swift中:</p>
 <ul>
-<li><p>字符串长度:返回指定编码的对应的字节数量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let str = &quot;hello world&quot;          </div><div class="line">print(str.lengthOfBytes(using: .utf8))</div><div class="line">输出结果: 11</div></pre></td></tr></table></figure>
-</li>
-<li><p>字符串长度:返回字符的个数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(str.characters.count) </div><div class="line">输出结果 : 13</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用NSString中转: </p>
-</li>
-<li><p>字符串的拼接: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let name = &quot;老王&quot;</div><div class="line">let age = 18 - let str = &quot;\(name) \(age)&quot;               </div><div class="line">print(str)</div><div class="line">输出结果: 老王18</div></pre></td></tr></table></figure>
-</li>
-<li><p>字符串的子串:一般使用NSString作为中转,因为Swift取子串的方法一直在优化</p>
+<li>字符串长度:返回指定编码的对应的字节数量<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span>          </div><div class="line"><span class="built_in">print</span>(str.lengthOfBytes(using: .utf8))</div><div class="line">输出结果: <span class="number">11</span></div></pre></td></tr></table></figure></li>
+<li>字符串长度:返回字符的个数<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(str.characters.<span class="built_in">count</span>) </div><div class="line">输出结果 : <span class="number">13</span></div></pre></td></tr></table></figure></li>
+<li>使用NSString中转: </li>
+<li>字符串的拼接: <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> name = <span class="string">"老王"</span></div><div class="line"><span class="keyword">let</span> age = <span class="number">18</span> - <span class="keyword">let</span> str = <span class="string">"<span class="subst">\(name)</span> <span class="subst">\(age)</span>"</span>               </div><div class="line"><span class="built_in">print</span>(str)</div><div class="line">输出结果: 老王<span class="number">18</span></div></pre></td></tr></table></figure></li>
+<li>字符串的子串:一般使用NSString作为中转,因为Swift取子串的方法一直在优化<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// NSString</span></div><div class="line"><span class="keyword">let</span> str = <span class="string">"今天天气真好"</span></div><div class="line"><span class="keyword">let</span> ocStr = str <span class="keyword">as</span> <span class="type">NSString</span></div><div class="line"><span class="keyword">let</span> s1 = ocStr.substring(with: <span class="type">NSMakeRange</span>(<span class="number">2</span>, <span class="number">3</span>))</div><div class="line"><span class="built_in">print</span>(s1)</div><div class="line">输出结果:天气真</div><div class="line"></div><div class="line"><span class="comment">// String 的3.0方法</span></div><div class="line"><span class="keyword">let</span> s2 = str.substring(from: <span class="string">"今天"</span>.endIndex)</div><div class="line"><span class="built_in">print</span>(s2)</div><div class="line">输出结果: 天气真好</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// NSString</div><div class="line">let str = &quot;今天天气真好&quot;</div><div class="line">let ocStr = str as NSString</div><div class="line">let s1 = ocStr.substring(with: NSMakeRange(2, 3))</div><div class="line">print(s1)</div><div class="line">输出结果:天气真</div><div class="line"></div><div class="line">// String 的3.0方法</div><div class="line">let s2 = str.substring(from: &quot;今天&quot;.endIndex)</div><div class="line">print(s2)</div><div class="line">输出结果: 天气真好</div></pre></td></tr></table></figure>
 <p>Swift中 数组的定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 这里因为类型推倒的原因数组a的类型是String</div><div class="line">let a = [&quot;小明&quot;, &quot;小红&quot;, &quot;小芳&quot;]</div><div class="line">// 这里因为类型推到的原因,数组b的类型是Int</div><div class="line">let b = [1, 2, 3]</div><div class="line">// 数组中可以混合类型,但是应用场景并不多</div><div class="line">// 结构体混合需要包装结构体</div></pre></td></tr></table></figure></p>
 <p>Swift中 数组的定义</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let a1:[String] = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</div><div class="line">let a2:[Any] = [&quot;1&quot;, &quot;2&quot;, 3, UITableView()]</div><div class="line">let a3:NSArray =  [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, UILabel()]</div><div class="line">let a4:NSMutableArray =  [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;</div></pre></td></tr></table></figure>
@@ -429,7 +421,7 @@ Swift中 声明变量不用加类型,会根据=号后面的类型自动推倒出
         <p><span>本文标题:</span><a href="/2016/11/04/Swift学习笔记/">Swift学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">SUn</a></p>
         <p><span>发布时间:</span>2016-11-04, 21:58:50</p>
-        <p><span>最后更新:</span>2016-11-21, 16:16:46</p>
+        <p><span>最后更新:</span>2016-11-21, 16:18:37</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/04/Swift学习笔记/" title="Swift学习笔记">http://yoursite.com/2016/11/04/Swift学习笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/04/Swift学习笔记/　　作者: SUn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
